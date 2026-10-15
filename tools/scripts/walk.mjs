@@ -1,0 +1,17 @@
+import { chromium } from "@playwright/test";
+const [,, base, outDir, w, h] = process.argv;
+const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium", args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
+const p = await b.newPage({ viewport: { width: Number(w||1280), height: Number(h||800) } });
+const logs = [];
+p.on("console", m => { if (m.type()==="error" || m.type()==="warning") logs.push(m.type()+": "+m.text()); });
+p.on("pageerror", e => logs.push("pageerror: "+e.message));
+await p.goto(base);
+await p.getByRole("button", { name: "Continuar" }).click();
+await p.getByRole("button", { name: "Continuar" }).click();
+await p.getByRole("button", { name: "Começar tutorial" }).click();
+await p.screenshot({ path: outDir + "/w1-briefing.png" });
+await p.getByRole("button", { name: "Iniciar atendimento" }).click();
+await p.waitForTimeout(2500);
+await p.screenshot({ path: outDir + "/w2-encounter.png" });
+console.log(logs.slice(0,20).join("\n"));
+await b.close();

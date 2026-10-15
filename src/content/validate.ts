@@ -114,7 +114,11 @@ export function validateCase(input: unknown): ValidationReport {
 
   if (!c.technical) {
     const kinds = new Set(c.tests.map((t) => t.kind));
-    for (const k of ["acceptable", "no_intervention", "inadequate"] as const) if (!kinds.has(k)) errors.push(`caso clínico sem trajetória de teste '${k}'`);
+    // rascunhos podem ser salvos sem trajetórias; a partir de "testado tecnicamente" elas são obrigatórias
+    const needs = c.status !== "draft" && c.status !== "schemaValidated";
+    for (const k of ["acceptable", "no_intervention", "inadequate"] as const) {
+      if (!kinds.has(k)) (needs ? errors : warnings).push(`caso clínico sem trajetória de teste '${k}'`);
+    }
     if (c.status === "clinicallyReviewed" || c.status === "published") {
       if (!c.reviewLog.some((r) => r.status === "clinicallyReviewed")) errors.push("status de revisão clínica sem registro de revisor no reviewLog");
     }
