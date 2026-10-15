@@ -61,7 +61,8 @@ jobs:
         working-directory: android
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon assembleDebug
+          set -o pipefail
+          ./gradlew --no-daemon --stacktrace assembleDebug 2>&1 | tee "$RUNNER_TEMP/gradle-debug.log"
 
       - name: Gradle assembleRelease (assinado)
         if: env.HAS_RELEASE_KEY == '1'
@@ -70,7 +71,18 @@ jobs:
           PLANTAO_KEY_ALIAS: ${{ secrets.PLANTAO_KEY_ALIAS }}
           PLANTAO_KEYSTORE_PASSWORD: ${{ secrets.PLANTAO_KEYSTORE_PASSWORD }}
           PLANTAO_KEY_PASSWORD: ${{ secrets.PLANTAO_KEY_PASSWORD }}
-        run: ./gradlew --no-daemon assembleRelease
+        run: |
+          set -o pipefail
+          ./gradlew --no-daemon assembleRelease 2>&1 | tee "$RUNNER_TEMP/gradle-release.log"
+
+      - name: Expor erro do Gradle como anotação
+        if: failure()
+        run: |
+          for f in "$RUNNER_TEMP"/gradle-*.log; do
+            [ -f "$f" ] || continue
+            MSG=$(grep -E -A25 "What went wrong|FAILURE:|error:|e: " "$f" | head -120 | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')
+            echo "::error title=gradle $(basename $f)::$MSG"
+          done
 
       - name: Verificar APKs (assinatura, alinhamento, ABIs)
         run: |
