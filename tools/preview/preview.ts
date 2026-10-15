@@ -1,0 +1,14 @@
+import { Scene3D } from "../../src/renderer3d/Scene3D";
+import type { VisualState } from "../../src/engine/views";
+const params = new URLSearchParams(location.search);
+const canvas = document.getElementById("c") as HTMLCanvasElement;
+const s = new Scene3D(canvas, { quality: "medio" });
+const env = (params.get("env") ?? "emergencia") as never;
+s.load(env, { ageGroup: (params.get("age") ?? "adulto") as never, sex: (params.get("sex") ?? "feminino") as never, skinTone: Number(params.get("skin") ?? 5), hairStyle: (params.get("hair") ?? "cacheado") as never, hairColor: "preto", build: "medio", pregnancyTrimester: Number(params.get("preg") ?? 0) });
+const devices = (params.get("dev") ?? "monitor_ecg,oximetro,manguito,mascara_reservatorio,acesso_periferico,equipo").split(",").filter(Boolean);
+const vs: VisualState = { posture: "supino", respiratoryRatePerMinute: 24, respiratoryEffortLevel: 2, isBreathing: true, consciousnessVisualState: "alerta", painVisualState: "moderada", skinFindings: { pallor: 0.3, cyanosis: 0.2, sweating: true, urticaria: params.has("urt"), jaundice: false, rash: false, edema: false, bleeding: false, angioedema: params.has("urt") }, activeDevices: devices as never, activeProcedures: params.has("cpr") ? ["rcp"] : [], speechState: "frases", seizure: false, agitation: false, tremor: false, cough: false, pregnancyTrimester: 0, heartRate: 110, hasPulse: true };
+s.setVisualState(vs);
+const preset = params.get("preset");
+if (preset) s.setPreset(preset as never, true);
+s.start();
+(window as any).__ready = true;
