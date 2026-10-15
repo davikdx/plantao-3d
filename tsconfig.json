@@ -17,5 +17,5 @@
     "types": ["vite/client", "node"],
     "noEmit": true
   },
-  "include": ["src", "tests", "vite.config.ts", "capacitor.config.ts", "playwright.config.ts", "tools"]
+  "include": ["src", "tests", "vite.config.ts", "vitest.config.ts", "capacitor.config.ts", "playwright.config.ts", "tools"]
 }
