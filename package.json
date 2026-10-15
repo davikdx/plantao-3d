@@ -1,0 +1,44 @@
+{
+  "name": "plantao-3d",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0 <25"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "validate:content": "vitest run tests/content",
+    "android:sync": "npm run build && cap sync android"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1",
+    "zod": "4.6.7",
+    "dexie": "4.4.6",
+    "@capacitor/core": "8.5.3",
+    "@capacitor/android": "8.5.3",
+    "@capacitor-community/sqlite": "8.1.1",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/preferences": "8.0.1",
+    "@capacitor/filesystem": "8.1.5",
+    "@capacitor/share": "8.0.3"
+  },
+  "devDependencies": {
+    "vite": "8.3.4",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0",
+    "@types/node": "24.19.2",
+    "vitest": "5.0.5",
+    "@playwright/test": "1.64.1",
+    "@capacitor/cli": "8.5.3"
+  }
+}

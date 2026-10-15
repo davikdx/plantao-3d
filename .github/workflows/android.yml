@@ -1,0 +1,108 @@
+name: Android APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PLANTAO_VERSION_CODE: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - name: Instalar dependências (lockfile)
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Testes do motor e conteúdo
+        run: npx vitest run
+
+      - name: Build web
+        run: npm run build
+
+      - name: Capacitor sync
+        run: npx cap sync android
+
+      - name: Preparar chave de release (se configurada)
+        env:
+          KEYSTORE_B64: ${{ secrets.PLANTAO_KEYSTORE_B64 }}
+        run: |
+          if [ -n "$KEYSTORE_B64" ]; then
+            echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/plantao.jks"
+            echo "PLANTAO_KEYSTORE_PATH=$RUNNER_TEMP/plantao.jks" >> "$GITHUB_ENV"
+            echo "HAS_RELEASE_KEY=1" >> "$GITHUB_ENV"
+          fi
+
+      - name: Gradle assembleDebug
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleDebug
+
+      - name: Gradle assembleRelease (assinado)
+        if: env.HAS_RELEASE_KEY == '1'
+        working-directory: android
+        env:
+          PLANTAO_KEY_ALIAS: ${{ secrets.PLANTAO_KEY_ALIAS }}
+          PLANTAO_KEYSTORE_PASSWORD: ${{ secrets.PLANTAO_KEYSTORE_PASSWORD }}
+          PLANTAO_KEY_PASSWORD: ${{ secrets.PLANTAO_KEY_PASSWORD }}
+        run: ./gradlew --no-daemon assembleRelease
+
+      - name: Verificar APKs (assinatura, alinhamento, ABIs)
+        run: |
+          BT=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
+          echo "build-tools: $BT"
+          mkdir -p out
+          cp android/app/build/outputs/apk/debug/app-debug.apk out/plantao3d-debug.apk
+          if [ -f android/app/build/outputs/apk/release/app-release.apk ]; then
+            cp android/app/build/outputs/apk/release/app-release.apk out/plantao3d-release.apk
+          fi
+          for f in out/*.apk; do
+            echo "== $f"; ls -l "$f"
+            "$BT/apksigner" verify --verbose --print-certs "$f" | head -20
+            "$BT/zipalign" -c -P 16 4 "$f" && echo "zipalign OK"
+            unzip -l "$f" | grep -E "lib/.*\.so" || echo "sem bibliotecas nativas .so"
+          done
+          sha256sum out/*.apk | tee out/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plantao3d-apk
+          path: out/
+
+      - name: Publicar na Release "latest"
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "Plantão 3D — build ${{ github.run_number }}"
+          prerelease: true
+          make_latest: true
+          files: out/*
+          body: |
+            Build automático do commit ${{ github.sha }}.
+            Instale `plantao3d-release.apk` se existir; senão `plantao3d-debug.apk`.
+            Conteúdo clínico em revisão: uso educacional.
