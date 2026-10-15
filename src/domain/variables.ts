@@ -17,7 +17,7 @@ export interface VarDef {
   group: "vital" | "gaso" | "eletrolitos" | "hemograma" | "bioquimica" | "outros" | "interno";
 }
 
-export const VARS = {
+const VARS_RAW = {
   hr: { label: "Frequência cardíaca", short: "FC", displayUnit: "bpm", min: 0, max: 300, decimals: 0, adultDefault: 80, group: "vital" },
   sbp: { label: "Pressão arterial sistólica", short: "PAS", displayUnit: "mmHg", min: 0, max: 300, decimals: 0, adultDefault: 120, group: "vital" },
   dbp: { label: "Pressão arterial diastólica", short: "PAD", displayUnit: "mmHg", min: 0, max: 200, decimals: 0, adultDefault: 75, group: "vital" },
@@ -71,7 +71,8 @@ export const VARS = {
   level: { label: "Nível abstrato (teste técnico)", short: "level", displayUnit: "u.a.", min: -1000, max: 1000, decimals: 4, adultDefault: 0, group: "interno" }
 } as const satisfies Record<string, VarDef>;
 
-export type VarId = keyof typeof VARS;
+export type VarId = keyof typeof VARS_RAW;
+export const VARS: Record<VarId, VarDef> = VARS_RAW;
 export const VAR_IDS = Object.keys(VARS) as VarId[];
 
 export function isVarId(v: string): v is VarId {
