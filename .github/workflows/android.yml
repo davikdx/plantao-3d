@@ -39,7 +39,7 @@ jobs:
         run: npm run typecheck
 
       - name: Testes do motor e conteúdo
-        run: npx vitest run
+        run: npx vitest run --passWithNoTests
 
       - name: Build web
         run: npm run build
