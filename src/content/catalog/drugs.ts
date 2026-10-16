@@ -85,7 +85,7 @@ const drugsRaw: DrugDefinition[] = [
   {
     id: "concentrado_hemacias", name: "Concentrado de hemácias", drugClass: "Hemocomponente",
     presentations: [{ id: "unidade", label: "Unidade (~300 mL)", concentration: q(1, "mg/mL"), form: "bolsa", volumeMl: 300 }],
-    routes: ["IV"], indications: ["Hemorragia com instabilidade", "Anemia sintomática conforme critérios"], contraindications: [], interactions: ["Exige tipagem/prova cruzada salvo emergência (O negativo/positivo conforme protocolo)"],
+    routes: ["IV", "IO"], indications: ["Hemorragia com instabilidade", "Anemia sintomática conforme critérios"], contraindications: [], interactions: ["Exige tipagem/prova cruzada salvo emergência (O negativo/positivo conforme protocolo)"],
     onset: "Imediato", duration: "—",
     doseRules: [r("ch-adulto", "adulto", "Hemorragia", "IV", "infusao_volume", q(250, "mL"), q(1200, "mL"), ["BR-SAMU-SAV"]), r("ch-gest", "gestante", "Hemorragia", "IV", "infusao_volume", q(250, "mL"), q(1200, "mL"), ["BR-GESTACAO"])],
     availability: ["hemocomponentes"], sourceIds: ["BR-SAMU-SAV"], reviewedAt: REV, validation: "pendente"
