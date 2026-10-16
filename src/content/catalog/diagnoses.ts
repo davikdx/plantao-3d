@@ -138,7 +138,10 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("dm2_descompensado", "Diabetes tipo 2 fora da meta", "Atenção primária"),
   D("febre_maculosa", "Febre maculosa", "Infectologia"),
   D("dengue_alarme", "Dengue com sinais de alarme", "Infectologia"),
-  D("leptospirose", "Leptospirose", "Infectologia")
+  D("leptospirose", "Leptospirose", "Infectologia"),
+  D("fasciite_necrosante", "Infecção necrosante de partes moles (fasciite necrosante)", "Infectologia", ["fasceíte necrosante", "infecção necrosante"]),
+  D("celulite", "Celulite/erisipela sem sinais de necrose", "Infectologia", ["erisipela"]),
+  D("trombose_venosa_profunda", "Trombose venosa profunda", "Outras urgências", ["TVP"])
 ];
 
 export const DIAGNOSES_BY_ID = new Map(DIAGNOSES.map((d) => [d.id, d]));

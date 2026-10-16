@@ -579,6 +579,23 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "vancomicina", name: "Vancomicina", drugClass: "Glicopeptídeo",
+    presentations: [{ id: "fa500", label: "Frasco-ampola 500 mg (diluir; infusão lenta)", concentration: q(50, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }, { id: "fa1g", label: "Frasco-ampola 1 g (diluir; infusão lenta)", concentration: q(50, "mg/mL"), form: "frasco_ampola", volumeMl: 20 }],
+    routes: ["IV"], indications: ["Cobertura de MRSA em infecção grave de pele/partes moles e outras infecções graves"], contraindications: [], interactions: ["Nefrotoxicidade aditiva (aminoglicosídeos, piperacilina-tazobactam)", "Reação infusional se infundida rápido"],
+    onset: "—", duration: "8–12 h (função renal)",
+    renalHepatic: "Ajuste renal e monitorização de nível sérico",
+    doseRules: [r("vanco-adulto", "adulto", "Infecção grave de partes moles (MRSA)", "IV", "bolus", q(15, "mg/kg"), q(20, "mg/kg"), ["INT-IDSA-SSTI-2014"], { notes: "30 mg/kg/dia em 2 doses (IDSA, Tabela 2); dose de ataque e intervalo conforme protocolo e função renal." }), r("vanco-idoso", "idoso", "Infecção grave de partes moles (MRSA)", "IV", "bolus", q(15, "mg/kg"), q(20, "mg/kg"), ["INT-IDSA-SSTI-2014"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-IDSA-SSTI-2014"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "clindamicina", name: "Clindamicina", drugClass: "Lincosamida",
+    presentations: [{ id: "amp600", label: "Ampola 150 mg/mL (4 mL = 600 mg)", concentration: q(150, "mg/mL"), form: "ampola", volumeMl: 4 }],
+    routes: ["IV", "VO"], indications: ["Infecção estreptocócica grave de partes moles (efeito antitoxina, associada)", "Infecções por anaeróbios"], contraindications: [], interactions: ["Diarreia por C. difficile"],
+    onset: "—", duration: "8 h",
+    doseRules: [r("clinda-adulto", "adulto", "Infecção estreptocócica de partes moles", "IV", "bolus", q(600, "mg"), q(900, "mg"), ["INT-IDSA-SSTI-2014"], { frequency: "8/8 h" }), r("clinda-idoso", "idoso", "Infecção estreptocócica de partes moles", "IV", "bolus", q(600, "mg"), q(900, "mg"), ["INT-IDSA-SSTI-2014"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-IDSA-SSTI-2014"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "doxiciclina", name: "Doxiciclina", drugClass: "Tetraciclina",
     presentations: [{ id: "cp100", label: "Comprimido 100 mg", concentration: q(100, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["Febre maculosa (todas as idades, conforme MS)", "Leptospirose (formas leves)"], contraindications: [], interactions: ["Antiácidos reduzem absorção"],
