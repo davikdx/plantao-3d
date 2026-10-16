@@ -611,6 +611,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["sala_vacina", "imunobiologicos_especiais"], sourceIds: ["BR-RAIVA-TETANO-RJ"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "manitol", name: "Manitol 20%", drugClass: "Diurético osmótico (terapia hiperosmolar)",
+    presentations: [{ id: "fr250", label: "Frasco 20% 250 mL (200 mg/mL)", concentration: q(200, "mg/mL"), form: "frasco", volumeMl: 250 }],
+    routes: ["IV"], indications: ["Hipertensão intracraniana com sinais de herniação (ponte até o tratamento definitivo)"], contraindications: ["Hipovolemia/hipotensão (cautela)", "Anúria"], interactions: ["Diurese osmótica: repor volume e monitorar sódio"],
+    onset: "Minutos", duration: "Horas",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["INT-ENLS-TCE-6", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],

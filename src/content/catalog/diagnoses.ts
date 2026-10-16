@@ -145,6 +145,9 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("neutropenia_febril", "Neutropenia febril", "Infectologia", ["neutropenia febril pós-quimioterapia"]),
   D("exposicao_raiva_grave", "Exposição grave ao vírus da raiva (mordedura em mão por animal não observável)", "Infectologia", ["acidente antirrábico", "mordedura de cão"]),
   D("exposicao_raiva_leve", "Exposição leve ao vírus da raiva", "Infectologia"),
+  D("hematoma_epidural", "Traumatismo cranioencefálico com hematoma extradural (epidural)", "Trauma", ["hematoma epidural", "TCE grave"]),
+  D("hematoma_subdural", "Hematoma subdural agudo", "Trauma"),
+  D("tce_leve", "Traumatismo cranioencefálico leve", "Trauma"),
   D("hepatite_viral_aguda", "Hepatite viral aguda", "Gastroenterologia"),
   D("trombose_venosa_profunda", "Trombose venosa profunda", "Outras urgências", ["TVP"])
 ];

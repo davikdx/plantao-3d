@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **53** (prioritários: 24/24)
+- Casos implementados e registrados: **55** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -50,8 +50,8 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C039 | Síndrome febril em pessoa neutropênica | sim | technicallyTested | 5 | hospital-regional |  |
 | C040 | Ferimento com risco infeccioso e vacinal | sim | technicallyTested | 5 | ubs-urbana |  |
 | C041 | Colisão com trauma abdominal e hipotensão | sim | technicallyTested | 5 | hospital-regional | sim |
-| C042 | Trauma torácico com piora respiratória | não | — | 0 | — |  |
-| C043 | Traumatismo craniano com rebaixamento progressivo | não | — | 0 | — |  |
+| C042 | Trauma torácico com piora respiratória | sim | technicallyTested | 5 | samu-usa |  |
+| C043 | Traumatismo craniano com rebaixamento progressivo | sim | technicallyTested | 5 | hospital-referencia |  |
 | C044 | Trauma pélvico com sinais de choque | não | — | 0 | — |  |
 | C045 | Trauma penetrante de membro com sangramento importante | não | — | 0 | — |  |
 | C046 | Queimadura com suspeita de lesão inalatória | não | — | 0 | — |  |
