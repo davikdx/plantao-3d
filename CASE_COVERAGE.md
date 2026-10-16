@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **55** (prioritários: 24/24)
+- Casos implementados e registrados: **60** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -52,11 +52,11 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C041 | Colisão com trauma abdominal e hipotensão | sim | technicallyTested | 5 | hospital-regional | sim |
 | C042 | Trauma torácico com piora respiratória | sim | technicallyTested | 5 | samu-usa |  |
 | C043 | Traumatismo craniano com rebaixamento progressivo | sim | technicallyTested | 5 | hospital-referencia |  |
-| C044 | Trauma pélvico com sinais de choque | não | — | 0 | — |  |
-| C045 | Trauma penetrante de membro com sangramento importante | não | — | 0 | — |  |
-| C046 | Queimadura com suspeita de lesão inalatória | não | — | 0 | — |  |
-| C047 | Trauma cervical com déficit neurológico | não | — | 0 | — |  |
-| C048 | Acidente em criança com múltiplas lesões | não | — | 0 | — |  |
+| C044 | Trauma pélvico com sinais de choque | sim | technicallyTested | 5 | hospital-regional |  |
+| C045 | Trauma penetrante de membro com sangramento importante | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C046 | Queimadura com suspeita de lesão inalatória | sim | technicallyTested | 5 | hospital-regional |  |
+| C047 | Trauma cervical com déficit neurológico | sim | technicallyTested | 5 | hospital-regional |  |
+| C048 | Acidente em criança com múltiplas lesões | sim | technicallyTested | 5 | hospital-referencia |  |
 | C049 | Poliúria, vômitos e alteração metabólica em jovem | sim | technicallyTested | 5 | hospital-regional | sim |
 | C050 | Desidratação e alteração de consciência em pessoa com diabetes | não | — | 0 | — |  |
 | C051 | Sudorese e confusão em usuário de insulina | sim | technicallyTested | 5 | samu-usa | sim |
