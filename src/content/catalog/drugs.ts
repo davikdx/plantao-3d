@@ -692,6 +692,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "salina_hipertonica", name: "Cloreto de sódio 3% (salina hipertônica)", drugClass: "Solução hipertônica",
+    presentations: [{ id: "bolsa150", label: "Solução 3% preparada — 150 mL (513 mmol/L de Na⁺)", concentration: q(30, "mg/mL"), form: "bolsa", volumeMl: 150 }],
+    routes: ["IV"], indications: ["Hiponatremia com sintomas graves ou moderadamente graves"], contraindications: ["Hiponatremia crônica assintomática"], interactions: [],
+    onset: "Minutos", duration: "—",
+    doseRules: [r("nacl3-adulto", "adulto", "Hiponatremia sintomática", "IV", "infusao_volume", q(150, "mL"), q(150, "mL"), ["INT-SFE-HIPONA"], { notes: "Bolus de 150 mL em 20 min; meta +5 mmol/L na 1ª hora; repetir conforme sódio e sintomas; máximo +10 mmol/L em 24 h." }), r("nacl3-idoso", "idoso", "Hiponatremia sintomática", "IV", "infusao_volume", q(150, "mL"), q(150, "mL"), ["INT-SFE-HIPONA"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["INT-SFE-HIPONA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
