@@ -50,7 +50,9 @@ export const RESOURCE_TAGS = [
   "cardiotocografia",
   "teste_rapido",
   "imobilizacao",
-  "soroterapia_antiveneno"
+  "soroterapia_antiveneno",
+  "sala_vacina",
+  "imunobiologicos_especiais"
 ] as const;
 export type ResourceTag = (typeof RESOURCE_TAGS)[number];
 
@@ -124,7 +126,7 @@ export const RESOURCE_PROFILES: ScenarioResourceProfile[] = [
     label: "UBS urbana (perfil fictício)",
     kind: "ubs",
     context: "Unidade Básica de Saúde em cidade de médio porte, equipe de Saúde da Família, sem laboratório próprio no local.",
-    resources: ["oxigenio", "nebulizacao", "glicosimetro", "ecg12", "medicacoes_basicas", "teste_rapido", "acesso_venoso", "lab_basico"],
+    resources: ["oxigenio", "nebulizacao", "glicosimetro", "ecg12", "medicacoes_basicas", "teste_rapido", "acesso_venoso", "lab_basico", "sala_vacina"],
     // coleta na UBS com processamento no laboratório municipal: resultado em outro dia (fator simulado)
     turnaroundMultiplier: 30,
     destinations: ["alta_orientada", "alta_com_seguimento_ubs", "retorno_programado", "encaminhamento_ambulatorial", "caps", "transferencia_regulada"],
@@ -135,7 +137,7 @@ export const RESOURCE_PROFILES: ScenarioResourceProfile[] = [
     label: "UBS rural (perfil fictício)",
     kind: "ubs",
     context: "Unidade em zona rural, a 60 km do hospital de referência; transporte depende do SAMU 192 ou de veículo municipal.",
-    resources: ["oxigenio", "glicosimetro", "medicacoes_basicas", "teste_rapido", "acesso_venoso"],
+    resources: ["oxigenio", "glicosimetro", "medicacoes_basicas", "teste_rapido", "acesso_venoso", "sala_vacina"],
     turnaroundMultiplier: 1,
     destinations: ["alta_orientada", "alta_com_seguimento_ubs", "retorno_programado", "encaminhamento_ambulatorial", "caps", "transferencia_regulada"],
     notes: "Sem ECG no local neste perfil. Tempo de chegada do SAMU simulado é maior."
@@ -175,7 +177,7 @@ export const RESOURCE_PROFILES: ScenarioResourceProfile[] = [
     label: "Pronto-socorro de hospital regional (perfil fictício)",
     kind: "hospital_regional",
     context: "Hospital geral de interior com tomografia, centro cirúrgico, UTI geral e banco de sangue; sem hemodinâmica.",
-    resources: [...BASE_UPA, "capnografia", "acesso_central", "dreno_torax", "lab_completo", "usg", "pocus", "tc", "hemocomponentes", "trombolitico", "centro_cirurgico", "uti", "obstetricia", "cardiotocografia", "soroterapia_antiveneno"],
+    resources: [...BASE_UPA, "capnografia", "acesso_central", "dreno_torax", "lab_completo", "usg", "pocus", "tc", "hemocomponentes", "trombolitico", "centro_cirurgico", "uti", "obstetricia", "cardiotocografia", "soroterapia_antiveneno", "sala_vacina", "imunobiologicos_especiais"],
     turnaroundMultiplier: 1,
     destinations: ["alta_orientada", "alta_com_seguimento_ubs", "observacao", "internacao_enfermaria", "uti", "centro_cirurgico", "transferencia_regulada", "encaminhamento_ambulatorial", "caps"],
     notes: "Hemodinâmica exige transferência regulada para hospital de referência."
@@ -185,7 +187,7 @@ export const RESOURCE_PROFILES: ScenarioResourceProfile[] = [
     label: "Hospital de referência terciário (perfil fictício)",
     kind: "hospital_referencia",
     context: "Hospital de referência em capital com hemodinâmica 24h, UTI, centro cirúrgico, obstetrícia de alto risco e neurologia.",
-    resources: [...BASE_UPA, "capnografia", "acesso_central", "dreno_torax", "lab_completo", "usg", "pocus", "tc", "rm", "hemocomponentes", "trombolitico", "hemodinamica", "centro_cirurgico", "uti", "obstetricia", "cardiotocografia", "soroterapia_antiveneno"],
+    resources: [...BASE_UPA, "capnografia", "acesso_central", "dreno_torax", "lab_completo", "usg", "pocus", "tc", "rm", "hemocomponentes", "trombolitico", "hemodinamica", "centro_cirurgico", "uti", "obstetricia", "cardiotocografia", "soroterapia_antiveneno", "sala_vacina", "imunobiologicos_especiais"],
     turnaroundMultiplier: 1,
     destinations: ["alta_orientada", "alta_com_seguimento_ubs", "observacao", "internacao_enfermaria", "uti", "centro_cirurgico", "hemodinamica", "encaminhamento_ambulatorial", "caps", "transferencia_regulada"],
     notes: "Perfil completo; ainda assim exames têm tempo de processamento."

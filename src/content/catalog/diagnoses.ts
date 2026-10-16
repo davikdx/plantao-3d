@@ -143,6 +143,8 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("celulite", "Celulite/erisipela sem sinais de necrose", "Infectologia", ["erisipela"]),
   D("endocardite_infecciosa", "Endocardite infecciosa", "Infectologia", ["endocardite"]),
   D("neutropenia_febril", "Neutropenia febril", "Infectologia", ["neutropenia febril pós-quimioterapia"]),
+  D("exposicao_raiva_grave", "Exposição grave ao vírus da raiva (mordedura em mão por animal não observável)", "Infectologia", ["acidente antirrábico", "mordedura de cão"]),
+  D("exposicao_raiva_leve", "Exposição leve ao vírus da raiva", "Infectologia"),
   D("hepatite_viral_aguda", "Hepatite viral aguda", "Gastroenterologia"),
   D("trombose_venosa_profunda", "Trombose venosa profunda", "Outras urgências", ["TVP"])
 ];

@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **47** (prioritários: 24/24)
+- Casos implementados e registrados: **53** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -43,12 +43,12 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C032 | Vertigem com sinais neurológicos associados | sim | technicallyTested | 5 | hospital-regional |  |
 | C033 | Febre após exposição a carrapatos | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C034 | Síndrome febril com sinais de alarme compatíveis com dengue | sim | technicallyTested | 5 | upa-porte-ii |  |
-| C035 | Infecção cutânea rapidamente progressiva | não | — | 0 | — |  |
-| C036 | Febre e dor lombar com instabilidade | não | — | 0 | — |  |
-| C037 | Febre persistente e sopro em contexto de risco | não | — | 0 | — |  |
-| C038 | Febre após enchente, mialgia e disfunção orgânica | não | — | 0 | — |  |
-| C039 | Síndrome febril em pessoa neutropênica | não | — | 0 | — |  |
-| C040 | Ferimento com risco infeccioso e vacinal | não | — | 0 | — |  |
+| C035 | Infecção cutânea rapidamente progressiva | sim | technicallyTested | 5 | hospital-regional |  |
+| C036 | Febre e dor lombar com instabilidade | sim | technicallyTested | 5 | hospital-referencia |  |
+| C037 | Febre persistente e sopro em contexto de risco | sim | technicallyTested | 5 | hospital-regional |  |
+| C038 | Febre após enchente, mialgia e disfunção orgânica | sim | technicallyTested | 5 | hospital-regional |  |
+| C039 | Síndrome febril em pessoa neutropênica | sim | technicallyTested | 5 | hospital-regional |  |
+| C040 | Ferimento com risco infeccioso e vacinal | sim | technicallyTested | 5 | ubs-urbana |  |
 | C041 | Colisão com trauma abdominal e hipotensão | sim | technicallyTested | 5 | hospital-regional | sim |
 | C042 | Trauma torácico com piora respiratória | não | — | 0 | — |  |
 | C043 | Traumatismo craniano com rebaixamento progressivo | não | — | 0 | — |  |

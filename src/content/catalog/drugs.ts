@@ -579,6 +579,38 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "vacina_antirrabica", name: "Vacina antirrábica humana (cultivo celular)", drugClass: "Imunobiológico (vacina inativada)",
+    presentations: [{ id: "fr05", label: "Frasco-ampola 0,5 mL (dose IM conforme fabricante)", concentration: q(1, "mg/mL"), form: "frasco_ampola", volumeMl: 0.5 }],
+    routes: ["IM"], indications: ["Profilaxia pós-exposição da raiva (esquema D0, D3, D7, D14)"], contraindications: ["Não há contraindicação na pós-exposição"], interactions: [],
+    onset: "Anticorpos em ~7–14 dias", duration: "—",
+    doseRules: [r("vac-raiva-im", "todos", "Pós-exposição", "IM", "bolus", q(0.5, "mL"), q(1, "mL"), ["BR-RAIVA-TETANO-RJ"], { notes: "Volume total do frasco conforme laboratório; não aplicar no glúteo; via intradérmica (0,2 mL em 2 sítios) não modelada." })],
+    availability: ["sala_vacina", "imunobiologicos_especiais"], sourceIds: ["BR-RAIVA-TETANO-RJ"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "soro_antirrabico", name: "Soro antirrábico humano (heterólogo, SARH)", drugClass: "Imunobiológico (imunização passiva)",
+    presentations: [{ id: "amp1000", label: "Ampola 200 UI/mL (5 mL) — conferir apresentação", concentration: q(200, "UI/mL"), form: "ampola", volumeMl: 5 }],
+    routes: ["IM"], indications: ["Lesão grave por animal não observável ou com suspeita de raiva (D0, junto à 1ª dose da vacina)"], contraindications: [], interactions: ["Reações de hipersensibilidade: aplicar em serviço preparado para anafilaxia"],
+    onset: "Imediato (anticorpos passivos)", duration: "—",
+    doseRules: [r("sarh", "todos", "Pós-exposição — lesão grave", "IM", "bolus", q(40, "UI/kg"), q(40, "UI/kg"), ["BR-RAIVA-TETANO-RJ"], { notes: "Infiltrar o máximo possível dentro e ao redor da lesão; restante IM. Contraindicado após o 7º dia da 1ª dose da vacina." })],
+    availability: ["imunobiologicos_especiais"], sourceIds: ["BR-RAIVA-TETANO-RJ"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "imunoglobulina_antirrabica", name: "Imunoglobulina antirrábica humana (IGHAR)", drugClass: "Imunobiológico (imunização passiva)",
+    presentations: [{ id: "fr150", label: "Frasco 150 UI/mL — conferir apresentação", concentration: q(150, "UI/mL"), form: "frasco_ampola", volumeMl: 2 }],
+    routes: ["IM"], indications: ["Alternativa ao SARH na lesão grave"], contraindications: [], interactions: [],
+    onset: "Imediato", duration: "—",
+    doseRules: [r("ighar", "todos", "Pós-exposição — lesão grave", "IM", "bolus", q(20, "UI/kg"), q(20, "UI/kg"), ["BR-RAIVA-TETANO-RJ"], { notes: "Infiltração na lesão; mesmas regras de prazo do soro." })],
+    availability: ["imunobiologicos_especiais"], sourceIds: ["BR-RAIVA-TETANO-RJ"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "vacina_dt", name: "Vacina dupla adulto (dT — difteria e tétano)", drugClass: "Imunobiológico (toxoides)",
+    presentations: [{ id: "fr05", label: "Dose 0,5 mL", concentration: q(1, "mg/mL"), form: "frasco_ampola", volumeMl: 0.5 }],
+    routes: ["IM"], indications: ["Reforço/esquema antitetânico conforme história vacinal e risco do ferimento"], contraindications: ["Reação anafilática prévia a componente"], interactions: [],
+    onset: "—", duration: "—",
+    doseRules: [r("dt", "todos", "Profilaxia do tétano", "IM", "bolus", q(0.5, "mL"), q(0.5, "mL"), ["BR-RAIVA-TETANO-RJ"])],
+    availability: ["sala_vacina", "imunobiologicos_especiais"], sourceIds: ["BR-RAIVA-TETANO-RJ"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
