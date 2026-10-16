@@ -387,6 +387,30 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-PCDT-HIV"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "nimodipino", name: "Nimodipino", drugClass: "Bloqueador de canal de cálcio (di-hidropiridínico)",
+    presentations: [{ id: "cp30", label: "Comprimido 30 mg", concentration: q(30, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Hemorragia subaracnóidea aneurismática (prevenção de isquemia tardia)"], contraindications: ["Hipotensão"], interactions: ["Hipotensão com outros anti-hipertensivos"],
+    onset: "—", duration: "4 h",
+    doseRules: [r("nimo-hsa", "adulto", "HSA", "VO", "bolus", q(60, "mg"), q(60, "mg"), ["INT-AHA-HSA-2023"], { frequency: "4/4 h por 21 dias (conferir)" })],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-AHA-HSA-2023"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "dexametasona", name: "Dexametasona", drugClass: "Corticosteroide",
+    presentations: [{ id: "amp10", label: "Ampola 4 mg/mL (2,5 mL = 10 mg)", concentration: q(4, "mg/mL"), form: "ampola", volumeMl: 2.5 }],
+    routes: ["IV", "IM"], indications: ["Meningite bacteriana suspeita (antes ou junto da 1ª dose do antibiótico)", "Edema vasogênico", "Crupe"], contraindications: [], interactions: [],
+    onset: "Horas", duration: "36–54 h",
+    doseRules: [r("dexa-meningite", "adulto", "Meningite bacteriana", "IV", "bolus", q(10, "mg"), q(10, "mg"), ["INT-ESCMID-MENINGITE-2016"], { frequency: "6/6 h por 4 dias (conferir)" }), r("dexa-crupe", "pediatrico", "Crupe", "VO", "bolus", q(0.15, "mg/kg"), q(0.6, "mg/kg"), ["INT-AHA-ALS"], { notes: "Faixa a conferir em diretriz pediátrica." })],
+    availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "imunoglobulina", name: "Imunoglobulina humana IV", drugClass: "Imunomodulador",
+    presentations: [{ id: "fa5g", label: "Frasco 5 g (50 mg/mL, 100 mL)", concentration: q(50, "mg/mL"), form: "frasco", volumeMl: 100 }],
+    routes: ["IV"], indications: ["Síndrome de Guillain-Barré com incapacidade (até 2–4 semanas do início)"], contraindications: ["Deficiência de IgA com anticorpos (anafilaxia)"], interactions: ["Trombose, lesão renal"],
+    onset: "Dias", duration: "—",
+    doseRules: [r("igiv-sgb", "adulto", "Guillain-Barré", "IV", "infusao_volume", q(0.4, "g/kg"), q(0.4, "g/kg"), ["BR-PCDT-SGB"], { frequency: "1x/dia por 5 dias (conferir)" })],
+    availability: ["hemocomponentes"], sourceIds: ["BR-ANVISA", "BR-PCDT-SGB"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "nitroglicerina", name: "Nitroglicerina", drugClass: "Nitrato / vasodilatador",
     presentations: [{ id: "amp25", label: "Ampola 5 mg/mL (5 mL) — diluir", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 5 }, { id: "sol200", label: "Solução preparada 50 mg/250 mL (200 microgramas/mL)", concentration: q(200, "mcg/mL"), form: "bolsa", volumeMl: 250 }],
     routes: ["IV"], indications: ["Edema agudo de pulmão hipertensivo", "Dor isquêmica persistente"], contraindications: ["PAS < 90 mmHg", "Inibidor de fosfodiesterase recente", "Infarto de VD"], interactions: [],

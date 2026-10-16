@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **40** (prioritários: 24/24)
+- Casos implementados e registrados: **46** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -34,13 +34,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C023 | Dispneia com estridor e progressão rápida | sim | technicallyTested | 5 | hospital-regional |  |
 | C024 | Derrame pleural com limitação respiratória | sim | technicallyTested | 5 | hospital-regional |  |
 | C025 | Déficit focal de início conhecido | sim | technicallyTested | 6 | hospital-regional | sim |
-| C026 | Déficit focal ao despertar | não | — | 0 | — |  |
-| C027 | Cefaleia explosiva com exame inicialmente preservado | não | — | 0 | — |  |
+| C026 | Déficit focal ao despertar | sim | technicallyTested | 5 | hospital-regional |  |
+| C027 | Cefaleia explosiva com exame inicialmente preservado | sim | technicallyTested | 5 | hospital-regional |  |
 | C028 | Crises convulsivas repetidas sem recuperação | sim | technicallyTested | 5 | hospital-regional | sim |
-| C029 | Alteração de consciência por causa metabólica | não | — | 0 | — |  |
-| C030 | Febre, cefaleia e rigidez de nuca | não | — | 0 | — |  |
-| C031 | Fraqueza ascendente com sintomas respiratórios | não | — | 0 | — |  |
-| C032 | Vertigem com sinais neurológicos associados | não | — | 0 | — |  |
+| C029 | Alteração de consciência por causa metabólica | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C030 | Febre, cefaleia e rigidez de nuca | sim | technicallyTested | 5 | hospital-regional |  |
+| C031 | Fraqueza ascendente com sintomas respiratórios | sim | technicallyTested | 5 | hospital-regional |  |
+| C032 | Vertigem com sinais neurológicos associados | sim | technicallyTested | 5 | hospital-regional |  |
 | C033 | Febre após exposição a carrapatos | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C034 | Síndrome febril com sinais de alarme compatíveis com dengue | não | — | 0 | — |  |
 | C035 | Infecção cutânea rapidamente progressiva | não | — | 0 | — |  |
