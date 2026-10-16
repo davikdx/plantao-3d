@@ -579,6 +579,15 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
+    presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
+    routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
+    onset: "—", duration: "8–12 h",
+    renalHepatic: "Ajuste renal necessário",
+    doseRules: [r("cefep-nf", "adulto", "Neutropenia febril", "IV", "bolus", q(2000, "mg"), q(2000, "mg"), ["INT-IDSA-NF-2010"], { frequency: "8/8 h (conferir)", notes: "Dose usual a conferir na bula/protocolo; a diretriz conferida cita o fármaco, não a dose." }), r("cefep-nf-idoso", "idoso", "Neutropenia febril", "IV", "bolus", q(2000, "mg"), q(2000, "mg"), ["INT-IDSA-NF-2010"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-IDSA-NF-2010"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "vancomicina", name: "Vancomicina", drugClass: "Glicopeptídeo",
     presentations: [{ id: "fa500", label: "Frasco-ampola 500 mg (diluir; infusão lenta)", concentration: q(50, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }, { id: "fa1g", label: "Frasco-ampola 1 g (diluir; infusão lenta)", concentration: q(50, "mg/mL"), form: "frasco_ampola", volumeMl: 20 }],
     routes: ["IV"], indications: ["Cobertura de MRSA em infecção grave de pele/partes moles e outras infecções graves"], contraindications: [], interactions: ["Nefrotoxicidade aditiva (aminoglicosídeos, piperacilina-tazobactam)", "Reação infusional se infundida rápido"],
