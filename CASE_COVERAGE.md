@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **46** (prioritários: 24/24)
+- Casos implementados e registrados: **47** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -42,7 +42,7 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C031 | Fraqueza ascendente com sintomas respiratórios | sim | technicallyTested | 5 | hospital-regional |  |
 | C032 | Vertigem com sinais neurológicos associados | sim | technicallyTested | 5 | hospital-regional |  |
 | C033 | Febre após exposição a carrapatos | sim | technicallyTested | 5 | upa-porte-ii | sim |
-| C034 | Síndrome febril com sinais de alarme compatíveis com dengue | não | — | 0 | — |  |
+| C034 | Síndrome febril com sinais de alarme compatíveis com dengue | sim | technicallyTested | 5 | upa-porte-ii |  |
 | C035 | Infecção cutânea rapidamente progressiva | não | — | 0 | — |  |
 | C036 | Febre e dor lombar com instabilidade | não | — | 0 | — |  |
 | C037 | Febre persistente e sopro em contexto de risco | não | — | 0 | — |  |
