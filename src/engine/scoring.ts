@@ -226,7 +226,7 @@ export function assess(s: SimState, ctx: EngineContext, resolveLabel: (kind: "ou
     const value = possible > 0 ? Math.max(0, (earned / possible) * max) : 0;
     return { domain: d, label: DOMAIN_LABELS[d], earned: Math.round(value * 10) / 10, max: Math.round(max * 10) / 10 };
   });
-  const total = Math.round(domainScores.reduce((a, d) => a + d.earned, 0) * 10) / 10;
+  const total = Math.min(100, Math.round(domainScores.reduce((a, d) => a + d.earned, 0) * 10) / 10);
 
   const criticalFailures = items.filter((i) => i.severity === "critica" && (i.penalty ? i.met : !i.met));
 

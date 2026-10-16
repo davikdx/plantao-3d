@@ -664,8 +664,8 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "fr4mg", label: "Frasco 4 mg/100 mL", concentration: q(0.04, "mg/mL"), form: "frasco", volumeMl: 100 }],
     routes: ["IV"], indications: ["Hipercalcemia grave (efeito em 2–4 dias)"], contraindications: ["Hipocalcemia", "Insuficiência renal grave (ajustar/evitar)"], interactions: [],
     onset: "48–72 h", duration: "Semanas",
-    doseRules: [],
-    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+    doseRules: [r("zol-hcm", "adulto", "Hipercalcemia da malignidade", "IV", "infusao_volume", q(3, "mg"), q(4, "mg"), ["INT-ES-HCM-2023"], { notes: "Infundir em 15–30 min (60 min se TFG < 60); ajustar dose se TFG < 60 mL/min." }), r("zol-hcm-idoso", "idoso", "Hipercalcemia da malignidade", "IV", "infusao_volume", q(3, "mg"), q(4, "mg"), ["INT-ES-HCM-2023"], { notes: "Ajustar à função renal." })],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-ES-HCM-2023"], reviewedAt: REV, validation: "pendente"
   },
   {
     id: "calcitonina", name: "Calcitonina", drugClass: "Hormônio hipocalcemiante",
