@@ -148,6 +148,12 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("hematoma_epidural", "Traumatismo cranioencefálico com hematoma extradural (epidural)", "Trauma", ["hematoma epidural", "TCE grave"]),
   D("hematoma_subdural", "Hematoma subdural agudo", "Trauma"),
   D("tce_leve", "Traumatismo cranioencefálico leve", "Trauma"),
+  D("fratura_pelve_instavel", "Fratura do anel pélvico com choque hemorrágico", "Trauma", ["fratura de bacia", "livro aberto"]),
+  D("lesao_arterial_membro", "Lesão arterial de membro com hemorragia externa", "Trauma", ["lesão vascular periférica"]),
+  D("queimadura_lesao_inalatoria", "Grande queimado com lesão inalatória", "Trauma", ["queimadura de vias aéreas", "inalação de fumaça"]),
+  D("trauma_raquimedular", "Trauma raquimedular cervical com choque neurogênico", "Trauma", ["TRM", "lesão medular", "choque neurogênico"]),
+  D("lesao_esplenica_trauma", "Trauma abdominal fechado com lesão esplênica", "Trauma", ["lesão de baço"]),
+  D("fratura_femur", "Fratura de fêmur", "Trauma"),
   D("hepatite_viral_aguda", "Hepatite viral aguda", "Gastroenterologia"),
   D("trombose_venosa_profunda", "Trombose venosa profunda", "Outras urgências", ["TVP"])
 ];
