@@ -124,6 +124,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia", "medicacoes_basicas"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "sg5", name: "Glicose 5% (soro glicosado)", drugClass: "Solução de glicose para manutenção",
+    presentations: [{ id: "bolsa500", label: "Bolsa 500 mL (50 mg/mL)", concentration: q(50, "mg/mL"), form: "bolsa", volumeMl: 500 }],
+    routes: ["IV"], indications: ["Associar à hidratação na CAD quando a glicemia cai (~200–250 mg/dL), mantendo a insulina"], contraindications: [], interactions: [],
+    onset: "Imediato", duration: "Enquanto infundida",
+    doseRules: [r("sg5-cad", "adulto", "CAD — glicemia em queda", "IV", "infusao_volume", q(250, "mL"), q(1000, "mL"), ["BR-SBD-CAD"], { notes: "Volume/velocidade a conferir no protocolo." }), r("sg5-ado", "pediatrico", "CAD — glicemia em queda", "IV", "infusao_volume", q(5, "mL/kg"), q(15, "mL/kg"), ["BR-SBD-CAD"])],
+    availability: ["acesso_venoso"], sourceIds: ["BR-ANVISA", "BR-SBD-CAD"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "glucagon", name: "Glucagon", drugClass: "Hormônio hiperglicemiante",
     presentations: [{ id: "fa1mg", label: "Frasco-ampola 1 mg (reconstituído 1 mg/mL)", concentration: q(1, "mg/mL"), form: "frasco_ampola", volumeMl: 1 }],
     routes: ["IM", "SC"], indications: ["Hipoglicemia grave sem acesso venoso"], contraindications: ["Feocromocitoma"], interactions: [],
