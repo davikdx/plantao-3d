@@ -40,7 +40,8 @@ const ROUTE_DURATION: Record<string, number> = {
   retal: 30,
   inalatoria: 60,
   nebulizacao: 600,
-  endotraqueal: 20
+  endotraqueal: 20,
+  SNG: 30
 };
 
 // ---------------------------------------------------------------------------
@@ -703,6 +704,7 @@ export function checkPrescription(state: SimState, ctx: EngineContext, raw: unkn
   }
   if (rx.route === "IO" && !state.devices.includes("acesso_io")) errors.push("Via intraóssea exige acesso intraósseo instalado.");
   if (rx.route === "endotraqueal" && !state.devices.includes("tot")) errors.push("Via endotraqueal exige tubo traqueal.");
+  if (rx.route === "SNG" && !state.actionLog.some((a) => a.actionId === "sonda_nasogastrica" && a.event === "complete")) errors.push("Via por sonda exige sonda nasogástrica posicionada.");
   if (rx.route === "VO" && (state.flags.consciousness !== "alerta" || state.flags.airway === "protegida")) {
     errors.push("Via oral contraindicada: paciente sem nível de consciência/deglutição seguros neste momento.");
   }

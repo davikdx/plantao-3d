@@ -630,7 +630,7 @@ const drugsRaw: DrugDefinition[] = [
   {
     id: "propiltiouracil", name: "Propiltiouracil (PTU)", drugClass: "Tionamida (antitireoidiano)",
     presentations: [{ id: "cp100", label: "Comprimido 100 mg", concentration: q(100, "mg"), form: "comprimido" }],
-    routes: ["VO"], indications: ["Crise tireotóxica (primeira escolha: também reduz conversão de T4 em T3)"], contraindications: ["Hepatotoxicidade prévia"], interactions: [],
+    routes: ["VO", "SNG"], indications: ["Crise tireotóxica (primeira escolha: também reduz conversão de T4 em T3)"], contraindications: ["Hepatotoxicidade prévia"], interactions: [],
     onset: "1–2 h", duration: "—",
     doseRules: [],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-SBEM-HIPER-2013"], reviewedAt: REV, validation: "pendente"
@@ -654,7 +654,7 @@ const drugsRaw: DrugDefinition[] = [
   {
     id: "levotiroxina", name: "Levotiroxina", drugClass: "Hormônio tireoidiano",
     presentations: [{ id: "cp100", label: "Comprimido 100 microgramas", concentration: q(0.1, "mg"), form: "comprimido" }],
-    routes: ["VO"], indications: ["Hipotireoidismo; coma mixedematoso (por sonda quando a forma IV não está disponível)"], contraindications: ["Insuficiência adrenal não tratada (dar corticoide antes)"], interactions: [],
+    routes: ["VO", "SNG"], indications: ["Hipotireoidismo; coma mixedematoso (por sonda quando a forma IV não está disponível)"], contraindications: ["Insuficiência adrenal não tratada (dar corticoide antes)"], interactions: [],
     onset: "Dias (VO)", duration: "Longa",
     doseRules: [],
     availability: ["medicacoes_basicas"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
