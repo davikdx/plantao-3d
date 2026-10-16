@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **34** (prioritários: 24/24)
+- Casos implementados e registrados: **40** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -27,12 +27,12 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C016 | Dispneia e dor pleurítica após imobilização | sim | technicallyTested | 5 | hospital-regional |  |
 | C017 | Crise asmática com dificuldade para falar | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C018 | Exacerbação de doença pulmonar obstrutiva | sim | technicallyTested | 5 | upa-porte-ii | sim |
-| C019 | Febre, tosse e hipoxemia em idoso | não | — | 0 | — |  |
-| C020 | Dispneia súbita após tosse intensa | não | — | 0 | — |  |
-| C021 | Sonolência em paciente com doença respiratória crônica | não | — | 0 | — |  |
-| C022 | Hipoxemia em pessoa imunossuprimida | não | — | 0 | — |  |
-| C023 | Dispneia com estridor e progressão rápida | não | — | 0 | — |  |
-| C024 | Derrame pleural com limitação respiratória | não | — | 0 | — |  |
+| C019 | Febre, tosse e hipoxemia em idoso | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C020 | Dispneia súbita após tosse intensa | sim | technicallyTested | 5 | hospital-regional |  |
+| C021 | Sonolência em paciente com doença respiratória crônica | sim | technicallyTested | 5 | hospital-regional |  |
+| C022 | Hipoxemia em pessoa imunossuprimida | sim | technicallyTested | 5 | hospital-regional |  |
+| C023 | Dispneia com estridor e progressão rápida | sim | technicallyTested | 5 | hospital-regional |  |
+| C024 | Derrame pleural com limitação respiratória | sim | technicallyTested | 5 | hospital-regional |  |
 | C025 | Déficit focal de início conhecido | sim | technicallyTested | 6 | hospital-regional | sim |
 | C026 | Déficit focal ao despertar | não | — | 0 | — |  |
 | C027 | Cefaleia explosiva com exame inicialmente preservado | não | — | 0 | — |  |

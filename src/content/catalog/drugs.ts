@@ -371,6 +371,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-BAVENO-VII"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "azitromicina", name: "Azitromicina", drugClass: "Macrolídeo",
+    presentations: [{ id: "cp500", label: "Comprimido 500 mg", concentration: q(500, "mg"), form: "comprimido" }, { id: "fa500", label: "Frasco-ampola 500 mg (IV)", concentration: q(500, "mg"), form: "frasco_ampola" }],
+    routes: ["VO", "IV"], indications: ["Cobertura de atípicos na pneumonia adquirida na comunidade (associada a betalactâmico quando indicado)"], contraindications: ["QT longo (cautela)"], interactions: ["Prolongamento de QT"],
+    onset: "—", duration: "—",
+    doseRules: [r("azi-adulto", "adulto", "PAC", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"], { frequency: "1x/dia (conferir duração)" }), r("azi-adulto-iv", "adulto", "PAC", "IV", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"]), r("azi-idoso", "idoso", "PAC", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"]), r("azi-idoso-iv", "idoso", "PAC", "IV", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"])],
+    availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "smx_tmp", name: "Sulfametoxazol + trimetoprima", drugClass: "Sulfonamida + inibidor da di-hidrofolato redutase",
+    presentations: [{ id: "amp400", label: "Ampola 400 mg + 80 mg (5 mL) — dose expressa pelo componente trimetoprima: 80 mg", concentration: q(16, "mg/mL"), form: "ampola", volumeMl: 5 }, { id: "cp800", label: "Comprimido 800 mg + 160 mg (dose pela trimetoprima: 160 mg)", concentration: q(160, "mg"), form: "comprimido" }],
+    routes: ["IV", "VO"], indications: ["Pneumocistose (dose pelo componente trimetoprima)"], contraindications: ["Alergia a sulfa", "Deficiência de G6PD (cautela)"], interactions: ["Hipercalemia, mielotoxicidade"],
+    onset: "—", duration: "—",
+    doseRules: [r("smx-pcp", "adulto", "Pneumocistose", "IV", "bolus", q(3.75, "mg/kg"), q(5, "mg/kg"), ["BR-PCDT-HIV"], { frequency: "6/6 h ou 8/8 h (TMP 15–20 mg/kg/dia; conferir)", notes: "Dose expressa pelo componente trimetoprima." }), r("smx-pcp-vo", "adulto", "Pneumocistose", "VO", "bolus", q(3.75, "mg/kg"), q(5, "mg/kg"), ["BR-PCDT-HIV"])],
+    availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-PCDT-HIV"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "nitroglicerina", name: "Nitroglicerina", drugClass: "Nitrato / vasodilatador",
     presentations: [{ id: "amp25", label: "Ampola 5 mg/mL (5 mL) — diluir", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 5 }, { id: "sol200", label: "Solução preparada 50 mg/250 mL (200 microgramas/mL)", concentration: q(200, "mcg/mL"), form: "bolsa", volumeMl: 250 }],
     routes: ["IV"], indications: ["Edema agudo de pulmão hipertensivo", "Dor isquêmica persistente"], contraindications: ["PAS < 90 mmHg", "Inibidor de fosfodiesterase recente", "Infarto de VD"], interactions: [],
