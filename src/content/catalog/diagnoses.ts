@@ -84,6 +84,10 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("dm1_inicio", "Diabetes tipo 1 de início recente (sem descompensação aguda grave)", "Endocrinologia"),
   D("gastroenterite", "Gastroenterite aguda", "Gastroenterologia"),
   D("insuficiencia_adrenal", "Insuficiência adrenal aguda", "Endocrinologia"),
+  D("crise_tireotoxica", "Crise tireotóxica", "Endocrinologia", ["tempestade tireoidiana"]),
+  D("coma_mixedematoso", "Coma mixedematoso (hipotireoidismo descompensado)", "Endocrinologia", ["mixedema"]),
+  D("hipercalcemia", "Hipercalcemia grave", "Endocrinologia", ["crise hipercalcêmica"]),
+  D("hipotireoidismo", "Hipotireoidismo", "Endocrinologia"),
   // Nefro
   D("hipercalemia", "Hipercalemia grave", "Nefrologia e eletrólitos", ["hiperpotassemia"]),
   D("hiponatremia", "Hiponatremia sintomática", "Nefrologia e eletrólitos"),

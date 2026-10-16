@@ -620,6 +620,62 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["INT-ENLS-TCE-6", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "propranolol", name: "Propranolol", drugClass: "Betabloqueador não seletivo",
+    presentations: [{ id: "cp40", label: "Comprimido 40 mg", concentration: q(40, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Controle adrenérgico na tireotoxicose"], contraindications: ["Asma/broncoespasmo", "Choque cardiogênico", "BAV avançado"], interactions: ["Bloqueadores de canal de cálcio não di-hidropiridínicos (bradicardia)"],
+    onset: "1–2 h (VO)", duration: "6–12 h",
+    doseRules: [r("prop-tireo", "adulto", "Tireotoxicose", "VO", "bolus", q(20, "mg"), q(80, "mg"), ["BR-SBEM-HIPER-2013"], { frequency: "a cada 6–12 h (faixa geral da tireotoxicose; na crise, conferir)" })],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-SBEM-HIPER-2013", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "propiltiouracil", name: "Propiltiouracil (PTU)", drugClass: "Tionamida (antitireoidiano)",
+    presentations: [{ id: "cp100", label: "Comprimido 100 mg", concentration: q(100, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Crise tireotóxica (primeira escolha: também reduz conversão de T4 em T3)"], contraindications: ["Hepatotoxicidade prévia"], interactions: [],
+    onset: "1–2 h", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-SBEM-HIPER-2013"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "metimazol", name: "Metimazol (tiamazol)", drugClass: "Tionamida (antitireoidiano)",
+    presentations: [{ id: "cp10", label: "Comprimido 10 mg", concentration: q(10, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Hipertireoidismo; alternativa ao PTU na crise"], contraindications: ["Agranulocitose prévia por tionamida"], interactions: [],
+    onset: "1–2 h", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-SBEM-HIPER-2013"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "lugol", name: "Solução de Lugol (iodo + iodeto de potássio)", drugClass: "Iodo inorgânico",
+    presentations: [{ id: "gotas5", label: "Solução oral 5% (gotas)", concentration: q(50, "mg/mL"), form: "frasco" }],
+    routes: ["VO"], indications: ["Crise tireotóxica — bloqueio da liberação hormonal, sempre após a tionamida"], contraindications: ["Antes da tionamida (pode aumentar a síntese)"], interactions: [],
+    onset: "Horas", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-SBEM-HIPER-2013"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "levotiroxina", name: "Levotiroxina", drugClass: "Hormônio tireoidiano",
+    presentations: [{ id: "cp100", label: "Comprimido 100 microgramas", concentration: q(0.1, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Hipotireoidismo; coma mixedematoso (por sonda quando a forma IV não está disponível)"], contraindications: ["Insuficiência adrenal não tratada (dar corticoide antes)"], interactions: [],
+    onset: "Dias (VO)", duration: "Longa",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "zoledronato", name: "Ácido zoledrônico", drugClass: "Bisfosfonato",
+    presentations: [{ id: "fr4mg", label: "Frasco 4 mg/100 mL", concentration: q(0.04, "mg/mL"), form: "frasco", volumeMl: 100 }],
+    routes: ["IV"], indications: ["Hipercalcemia grave (efeito em 2–4 dias)"], contraindications: ["Hipocalcemia", "Insuficiência renal grave (ajustar/evitar)"], interactions: [],
+    onset: "48–72 h", duration: "Semanas",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "calcitonina", name: "Calcitonina", drugClass: "Hormônio hipocalcemiante",
+    presentations: [{ id: "amp100", label: "Ampola 100 UI/mL", concentration: q(100, "UI/mL"), form: "ampola", volumeMl: 1 }],
+    routes: ["SC", "IM"], indications: ["Hipercalcemia grave — ponte de ação rápida (taquifilaxia em 48 h)"], contraindications: ["Alergia"], interactions: [],
+    onset: "4–6 h", duration: "6–8 h",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
