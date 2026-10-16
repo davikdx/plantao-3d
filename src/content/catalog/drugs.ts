@@ -146,6 +146,7 @@ const drugsRaw: DrugDefinition[] = [
     onset: "IV: minutos", duration: "IV: curta",
     doseRules: [
       r("ins-cad", "adulto", "Cetoacidose diabética", "IV", "infusao", q(0.05, "UI/kg/h"), q(0.14, "UI/kg/h"), ["BR-SBD-CAD"], { notes: "Faixa a conferir no capítulo da SBD; só após K⁺ ≥ 3,3 mmol/L." }),
+      r("ins-shh-idoso", "idoso", "Estado hiperglicêmico hiperosmolar", "IV", "infusao", q(0.05, "UI/kg/h"), q(0.1, "UI/kg/h"), ["BR-SBD-SHH-2025"], { notes: "Após reidratação inicial e K⁺ ≥ 3,3 mEq/L; queda de glicemia 50–70 mg/dL/h." }),
       r("ins-hiperk", "adulto", "Hipercalemia", "IV", "bolus", q(5, "UI"), q(10, "UI"), ["INT-UKKA-HIPERK"], { notes: "Sempre associada à glicose; dose a conferir no PDF da diretriz." }),
       r("ins-hiperk-idoso", "idoso", "Hipercalemia", "IV", "bolus", q(5, "UI"), q(10, "UI"), ["INT-UKKA-HIPERK"])
     ],
