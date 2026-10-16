@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **60** (prioritários: 24/24)
+- Casos implementados e registrados: **66** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -58,13 +58,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C047 | Trauma cervical com déficit neurológico | sim | technicallyTested | 5 | hospital-regional |  |
 | C048 | Acidente em criança com múltiplas lesões | sim | technicallyTested | 5 | hospital-referencia |  |
 | C049 | Poliúria, vômitos e alteração metabólica em jovem | sim | technicallyTested | 5 | hospital-regional | sim |
-| C050 | Desidratação e alteração de consciência em pessoa com diabetes | não | — | 0 | — |  |
+| C050 | Desidratação e alteração de consciência em pessoa com diabetes | sim | technicallyTested | 5 | hospital-regional |  |
 | C051 | Sudorese e confusão em usuário de insulina | sim | technicallyTested | 5 | samu-usa | sim |
-| C052 | Vômitos e hipotensão em usuário crônico de corticosteroide | não | — | 0 | — |  |
-| C053 | Febre, taquicardia e alteração de consciência em hipertireoidismo | não | — | 0 | — |  |
-| C054 | Hipotermia e rebaixamento em hipotireoidismo | não | — | 0 | — |  |
-| C055 | Fraqueza e distúrbio de cálcio sintomático | não | — | 0 | — |  |
-| C056 | Hiperglicemia em UBS com sintomas e perda de peso | não | — | 0 | — |  |
+| C052 | Vômitos e hipotensão em usuário crônico de corticosteroide | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C053 | Febre, taquicardia e alteração de consciência em hipertireoidismo | sim | technicallyTested | 5 | hospital-regional |  |
+| C054 | Hipotermia e rebaixamento em hipotireoidismo | sim | technicallyTested | 5 | hospital-regional |  |
+| C055 | Fraqueza e distúrbio de cálcio sintomático | sim | technicallyTested | 5 | hospital-regional |  |
+| C056 | Hiperglicemia em UBS com sintomas e perda de peso | sim | technicallyTested | 5 | ubs-urbana |  |
 | C057 | Fraqueza e alteração de ECG em doença renal | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C058 | Confusão e convulsão com sódio baixo | não | — | 0 | — |  |
 | C059 | Desidratação com sódio elevado | não | — | 0 | — |  |

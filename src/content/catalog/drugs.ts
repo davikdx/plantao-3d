@@ -676,6 +676,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "insulina_nph", name: "Insulina humana NPH", drugClass: "Insulina de ação intermediária (basal)",
+    presentations: [{ id: "fr100", label: "Frasco/caneta 100 UI/mL", concentration: q(100, "UI/mL"), form: "frasco", volumeMl: 10 }],
+    routes: ["SC"], indications: ["DM2 com sintomas de deficiência de insulina ou falha de antidiabéticos orais", "DM1 (esquema basal-bolus)"], contraindications: ["Hipoglicemia"], interactions: ["Betabloqueadores podem mascarar hipoglicemia"],
+    onset: "1–2 h", duration: "12–18 h",
+    doseRules: [r("nph-inicio", "adulto", "DM2 — início de insulina basal (ao deitar)", "SC", "bolus", q(0.1, "UI/kg"), q(0.2, "UI/kg"), ["BR-SBD-SUS-2026"], { notes: "Cerca de 10 UI ou 0,2 UI/kg ao deitar; ajustar 2–4 UI pela glicemia de jejum." }), r("nph-inicio-idoso", "idoso", "DM2 — início de insulina basal (ao deitar)", "SC", "bolus", q(0.1, "UI/kg"), q(0.2, "UI/kg"), ["BR-SBD-SUS-2026"])],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "metformina", name: "Metformina", drugClass: "Biguanida",
+    presentations: [{ id: "cp500", label: "Comprimido 500 mg", concentration: q(500, "mg"), form: "comprimido" }, { id: "cp850", label: "Comprimido 850 mg", concentration: q(850, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["DM2 — primeira linha"], contraindications: ["TFG < 30 mL/min/1,73 m²", "Acidose, choque, hipóxia"], interactions: ["Contraste iodado (suspender conforme função renal)"],
+    onset: "Dias", duration: "—",
+    doseRules: [r("met-inicio", "adulto", "DM2 — dose inicial", "VO", "bolus", q(500, "mg"), q(850, "mg"), ["BR-SBD-SUS-2026"], { frequency: "1–2 vezes ao dia, com refeição; titular gradualmente (conferir)", notes: "Máximo 1000 mg/dia se TFG < 45; suspender se < 30." })],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
