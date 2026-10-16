@@ -307,6 +307,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["trombolitico"], sourceIds: ["BR-ANVISA", "INT-ESC-SCA-2023"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "alteplase", name: "Alteplase", drugClass: "Fibrinolítico",
+    presentations: [{ id: "fa50", label: "Frasco-ampola 50 mg (1 mg/mL reconstituído)", concentration: q(1, "mg/mL"), form: "frasco_ampola", volumeMl: 50 }],
+    routes: ["IV"], indications: ["AVC isquêmico agudo em até 4 h 30 min do início, após TC sem hemorragia e sem contraindicações"], contraindications: ["Hemorragia intracraniana", "PA > 185/110 mmHg sem resposta à correção", "Plaquetas < 100.000/µL, RNI > 1,7", "Cirurgia de grande porte < 14 dias"], interactions: ["Anticoagulantes e antiagregantes nas 24 h seguintes"],
+    onset: "Minutos", duration: "—",
+    doseRules: [r("alt-avc", "adulto", "AVC isquêmico agudo", "IV", "infusao_volume", q(0.9, "mg/kg"), q(0.9, "mg/kg"), ["BR-PCDT-AVC"], { maxSingle: q(90, "mg"), notes: "10% em bolus e o restante em 60 min (PCDT AVCi 2023)." }), r("alt-avc-idoso", "idoso", "AVC isquêmico agudo", "IV", "infusao_volume", q(0.9, "mg/kg"), q(0.9, "mg/kg"), ["BR-PCDT-AVC"], { maxSingle: q(90, "mg") })],
+    availability: ["trombolitico"], sourceIds: ["BR-ANVISA", "BR-PCDT-AVC"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "dobutamina", name: "Dobutamina", drugClass: "Inotrópico (agonista beta-1)",
+    presentations: [{ id: "amp250", label: "Ampola 12,5 mg/mL (20 mL) — diluir", concentration: q(12.5, "mg/mL"), form: "ampola", volumeMl: 20 }, { id: "sol1000", label: "Solução preparada 250 mg/250 mL (1000 microgramas/mL)", concentration: q(1000, "mcg/mL"), form: "bolsa", volumeMl: 250 }],
+    routes: ["IV"], indications: ["Baixo débito com hipoperfusão (choque cardiogênico), associada a vasopressor se hipotensão"], contraindications: ["Hipovolemia não corrigida", "Obstrução da via de saída do VE"], interactions: ["Betabloqueadores reduzem efeito"],
+    onset: "1–2 min", duration: "Curta",
+    doseRules: [r("dobu-adulto", "adulto", "Baixo débito", "IV", "infusao", q(2, "mcg/kg/min"), q(20, "mcg/kg/min"), ["INT-ESC-IC-2021"], { notes: "Faixa usual a conferir; titular por perfusão." }), r("dobu-idoso", "idoso", "Baixo débito", "IV", "infusao", q(2, "mcg/kg/min"), q(20, "mcg/kg/min"), ["INT-ESC-IC-2021"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-ESC-IC-2021"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "nitroglicerina", name: "Nitroglicerina", drugClass: "Nitrato / vasodilatador",
     presentations: [{ id: "amp25", label: "Ampola 5 mg/mL (5 mL) — diluir", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 5 }, { id: "sol200", label: "Solução preparada 50 mg/250 mL (200 microgramas/mL)", concentration: q(200, "mcg/mL"), form: "bolsa", volumeMl: 250 }],
     routes: ["IV"], indications: ["Edema agudo de pulmão hipertensivo", "Dor isquêmica persistente"], contraindications: ["PAS < 90 mmHg", "Inibidor de fosfodiesterase recente", "Infarto de VD"], interactions: [],
@@ -335,7 +351,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "amp250", label: "Ampola 50 mg/mL (5 mL)", concentration: q(50, "mg/mL"), form: "ampola", volumeMl: 5 }],
     routes: ["IV"], indications: ["Hemorragia pós-parto (até 3 h)", "Trauma com sangramento significativo (até 3 h)"], contraindications: ["Tromboembolismo ativo"], interactions: [],
     onset: "Minutos", duration: "Horas",
-    doseRules: [r("atx-gest", "gestante", "HPP", "IV", "bolus", q(1000, "mg"), q(1000, "mg"), ["BR-GESTACAO"], { notes: "Em 10 min; pode repetir uma vez — conferir." }), r("atx-adulto", "adulto", "Trauma", "IV", "bolus", q(1000, "mg"), q(1000, "mg"), ["BR-SAMU-SAV"])],
+    doseRules: [r("atx-gest", "gestante", "HPP", "IV", "bolus", q(1000, "mg"), q(1000, "mg"), ["BR-GESTACAO"], { notes: "Em 10 min; pode repetir uma vez — conferir." }), r("atx-adulto", "adulto", "Trauma", "IV", "bolus", q(1000, "mg"), q(1000, "mg"), ["BR-SAMU-SAV", "INT-CRASH2"], { notes: "Em 10 min, até 3 h do trauma; seguida de 1 g em 8 h (conferir)." })],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
