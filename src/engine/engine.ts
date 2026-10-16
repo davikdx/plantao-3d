@@ -187,8 +187,14 @@ function processQueue(state: SimState, ctx: EngineContext): void {
 // ---------------------------------------------------------------------------
 // Regras
 // ---------------------------------------------------------------------------
+const RULE_CACHE = new WeakMap<object, Rule[]>();
 function sortedRules(ctx: EngineContext): Rule[] {
-  return [...ctx.caseDef.rules].sort((a, b) => b.priority - a.priority || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  let r = RULE_CACHE.get(ctx.caseDef);
+  if (!r) {
+    r = [...ctx.caseDef.rules].sort((a, b) => b.priority - a.priority || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+    RULE_CACHE.set(ctx.caseDef, r);
+  }
+  return r;
 }
 
 function evaluateRules(state: SimState, ctx: EngineContext): void {
