@@ -142,6 +142,7 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("fasciite_necrosante", "Infecção necrosante de partes moles (fasciite necrosante)", "Infectologia", ["fasceíte necrosante", "infecção necrosante"]),
   D("celulite", "Celulite/erisipela sem sinais de necrose", "Infectologia", ["erisipela"]),
   D("endocardite_infecciosa", "Endocardite infecciosa", "Infectologia", ["endocardite"]),
+  D("hepatite_viral_aguda", "Hepatite viral aguda", "Gastroenterologia"),
   D("trombose_venosa_profunda", "Trombose venosa profunda", "Outras urgências", ["TVP"])
 ];
 
