@@ -91,6 +91,11 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   // Nefro
   D("hipercalemia", "Hipercalemia grave", "Nefrologia e eletrólitos", ["hiperpotassemia"]),
   D("hiponatremia", "Hiponatremia sintomática", "Nefrologia e eletrólitos"),
+  D("hipernatremia", "Hipernatremia com desidratação", "Nefrologia e eletrólitos"),
+  D("retencao_urinaria", "Retenção urinária aguda com lesão renal pós-renal", "Nefrologia e eletrólitos", ["bexigoma", "uropatia obstrutiva"]),
+  D("acidose_metabolica_grave", "Acidose metabólica grave", "Nefrologia e eletrólitos"),
+  D("anemia_drc", "Anemia da doença renal crônica", "Nefrologia e eletrólitos"),
+  D("ferropenia", "Anemia ferropriva", "Hematologia"),
   D("lra", "Lesão renal aguda", "Nefrologia e eletrólitos"),
   D("drc_agudizada", "Doença renal crônica agudizada", "Nefrologia e eletrólitos"),
   D("hipocalcemia", "Hipocalcemia", "Nefrologia e eletrólitos"),
