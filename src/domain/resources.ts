@@ -124,8 +124,9 @@ export const RESOURCE_PROFILES: ScenarioResourceProfile[] = [
     label: "UBS urbana (perfil fictício)",
     kind: "ubs",
     context: "Unidade Básica de Saúde em cidade de médio porte, equipe de Saúde da Família, sem laboratório próprio no local.",
-    resources: ["oxigenio", "nebulizacao", "glicosimetro", "ecg12", "medicacoes_basicas", "teste_rapido", "acesso_venoso"],
-    turnaroundMultiplier: 1,
+    resources: ["oxigenio", "nebulizacao", "glicosimetro", "ecg12", "medicacoes_basicas", "teste_rapido", "acesso_venoso", "lab_basico"],
+    // coleta na UBS com processamento no laboratório municipal: resultado em outro dia (fator simulado)
+    turnaroundMultiplier: 30,
     destinations: ["alta_orientada", "alta_com_seguimento_ubs", "retorno_programado", "encaminhamento_ambulatorial", "caps", "transferencia_regulada"],
     notes: "Exames laboratoriais são coletados para resultado em outro dia; urgências são estabilizadas com o disponível e reguladas (SAMU 192)."
   },
