@@ -31,9 +31,13 @@ import { C013 } from "./C013";
 import { C014 } from "./C014";
 import { C015 } from "./C015";
 import { C016 } from "./C016";
+import { C003 } from "./C003";
+import { C005 } from "./C005";
+import { C008 } from "./C008";
+import { C010 } from "./C010";
 
 /** Casos embarcados. A ordem não importa; ids estáveis C001–C120. */
-export const BUILTIN_CASE_INPUTS: CaseDefinitionInput[] = [T000, C001, C002, C004, C006, C007, C009, C011, C012, C013, C014, C015, C016, C017, C018, C025, C028, C033, C041, C049, C051, C057, C073, C074, C076, C081, C083, C089, C091, C097, C105];
+export const BUILTIN_CASE_INPUTS: CaseDefinitionInput[] = [T000, C001, C002, C003, C004, C005, C006, C007, C008, C009, C010, C011, C012, C013, C014, C015, C016, C017, C018, C025, C028, C033, C041, C049, C051, C057, C073, C074, C076, C081, C083, C089, C091, C097, C105];
 
 export interface LoadedCases {
   cases: CaseDefinition[];

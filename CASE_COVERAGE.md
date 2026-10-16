@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **30** (prioritários: 24/24)
+- Casos implementados e registrados: **34** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -11,14 +11,14 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 |---|---|---|---|---|---|---|
 | C001 | Hipoperfusão em infecção urinária complicada | sim | technicallyTested | 5 | hospital-regional | sim |
 | C002 | Hipotensão em infarto extenso | sim | technicallyTested | 6 | hospital-regional | sim |
-| C003 | Sangramento digestivo com instabilidade | não | — | 0 | — |  |
+| C003 | Sangramento digestivo com instabilidade | sim | technicallyTested | 5 | hospital-regional |  |
 | C004 | Reação alérgica grave após medicamento | sim | technicallyTested | 5 | upa-porte-ii | sim |
-| C005 | Deterioração após procedimento torácico | não | — | 0 | — |  |
+| C005 | Deterioração após procedimento torácico | sim | technicallyTested | 5 | hospital-referencia |  |
 | C006 | Parada com ritmo chocável em área monitorizada | sim | technicallyTested | 5 | hospital-regional | sim |
 | C007 | Atividade elétrica sem pulso após deterioração | sim | technicallyTested | 5 | hospital-regional | sim |
-| C008 | Cuidados após recuperação da circulação | não | — | 0 | — |  |
+| C008 | Cuidados após recuperação da circulação | sim | technicallyTested | 5 | upa-porte-ii |  |
 | C009 | Dor torácica isquêmica com alteração no ECG | sim | technicallyTested | 5 | hospital-regional | sim |
-| C010 | Dor torácica sem elevação persistente do segmento ST | não | — | 0 | — |  |
+| C010 | Dor torácica sem elevação persistente do segmento ST | sim | technicallyTested | 5 | hospital-regional |  |
 | C011 | Dispneia com congestão pulmonar e hipertensão | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C012 | Palpitações regulares em pessoa estável | sim | technicallyTested | 5 | upa-porte-ii |  |
 | C013 | Taquicardia com repercussão hemodinâmica | sim | technicallyTested | 5 | hospital-regional |  |
