@@ -295,7 +295,7 @@ const drugsRaw: DrugDefinition[] = [
     routes: ["SC", "IV"], indications: ["SCA", "Tromboembolismo venoso"], contraindications: ["Sangramento ativo", "Plaquetopenia induzida por heparina"], interactions: [],
     onset: "SC 3–5 h; IV imediato", duration: "12 h",
     renalHepatic: "Ajuste em ClCr < 30 mL/min",
-    doseRules: [r("enox-sc", "adulto", "SCA", "SC", "bolus", q(1, "mg/kg"), q(1, "mg/kg"), ["INT-ESC-SCA-2023"]), r("enox-iv", "adulto", "SCA — bolus com fibrinólise", "IV", "bolus", q(30, "mg"), q(30, "mg"), ["INT-ESC-SCA-2023"])],
+    doseRules: [r("enox-sc", "adulto", "SCA", "SC", "bolus", q(1, "mg/kg"), q(1, "mg/kg"), ["INT-ESC-SCA-2023"]), r("enox-iv", "adulto", "SCA — bolus com fibrinólise", "IV", "bolus", q(30, "mg"), q(30, "mg"), ["INT-ESC-SCA-2023"]), r("enox-tev", "adulto", "TEP/TVP", "SC", "bolus", q(1, "mg/kg"), q(1, "mg/kg"), ["INT-ESC-TEP-2019"], { frequency: "12/12 h (conferir ajuste renal)" })],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
@@ -311,7 +311,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "fa50", label: "Frasco-ampola 50 mg (1 mg/mL reconstituído)", concentration: q(1, "mg/mL"), form: "frasco_ampola", volumeMl: 50 }],
     routes: ["IV"], indications: ["AVC isquêmico agudo em até 4 h 30 min do início, após TC sem hemorragia e sem contraindicações"], contraindications: ["Hemorragia intracraniana", "PA > 185/110 mmHg sem resposta à correção", "Plaquetas < 100.000/µL, RNI > 1,7", "Cirurgia de grande porte < 14 dias"], interactions: ["Anticoagulantes e antiagregantes nas 24 h seguintes"],
     onset: "Minutos", duration: "—",
-    doseRules: [r("alt-avc", "adulto", "AVC isquêmico agudo", "IV", "infusao_volume", q(0.9, "mg/kg"), q(0.9, "mg/kg"), ["BR-PCDT-AVC"], { maxSingle: q(90, "mg"), notes: "10% em bolus e o restante em 60 min (PCDT AVCi 2023)." }), r("alt-avc-idoso", "idoso", "AVC isquêmico agudo", "IV", "infusao_volume", q(0.9, "mg/kg"), q(0.9, "mg/kg"), ["BR-PCDT-AVC"], { maxSingle: q(90, "mg") })],
+    doseRules: [r("alt-avc", "adulto", "AVC isquêmico agudo", "IV", "infusao_volume", q(0.9, "mg/kg"), q(0.9, "mg/kg"), ["BR-PCDT-AVC"], { maxSingle: q(90, "mg"), notes: "10% em bolus e o restante em 60 min (PCDT AVCi 2023)." }), r("alt-avc-idoso", "idoso", "AVC isquêmico agudo", "IV", "infusao_volume", q(0.9, "mg/kg"), q(0.9, "mg/kg"), ["BR-PCDT-AVC"], { maxSingle: q(90, "mg") }), r("alt-tep", "adulto", "TEP de alto risco", "IV", "infusao_volume", q(100, "mg"), q(100, "mg"), ["INT-ESC-TEP-2019"], { notes: "100 mg em 2 h (conferir esquemas alternativos)." })],
     availability: ["trombolitico"], sourceIds: ["BR-ANVISA", "BR-PCDT-AVC"], reviewedAt: REV, validation: "pendente"
   },
   {
@@ -321,6 +321,54 @@ const drugsRaw: DrugDefinition[] = [
     onset: "1–2 min", duration: "Curta",
     doseRules: [r("dobu-adulto", "adulto", "Baixo débito", "IV", "infusao", q(2, "mcg/kg/min"), q(20, "mcg/kg/min"), ["INT-ESC-IC-2021"], { notes: "Faixa usual a conferir; titular por perfusão." }), r("dobu-idoso", "idoso", "Baixo débito", "IV", "infusao", q(2, "mcg/kg/min"), q(20, "mcg/kg/min"), ["INT-ESC-IC-2021"])],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-ESC-IC-2021"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "adenosina", name: "Adenosina", drugClass: "Antiarrítmico (bloqueio nodal transitório)",
+    presentations: [{ id: "amp6", label: "Ampola 3 mg/mL (2 mL)", concentration: q(3, "mg/mL"), form: "ampola", volumeMl: 2 }],
+    routes: ["IV"], indications: ["Taquicardia regular de QRS estreito (reentrada nodal/AV) estável após manobra vagal"], contraindications: ["Asma grave/broncoespasmo ativo (relativa)", "Pré-excitação com FA"], interactions: ["Dipiridamol potencializa; metilxantinas reduzem"],
+    onset: "Segundos", duration: "< 10 s",
+    doseRules: [r("ade-adulto", "adulto", "TSV", "IV", "bolus", q(6, "mg"), q(12, "mg"), ["INT-AHA-ALS"], { notes: "Bolus rápido seguido de flush de SF; 6 mg e, se necessário, 12 mg (conferir)." }), r("ade-idoso", "idoso", "TSV", "IV", "bolus", q(6, "mg"), q(12, "mg"), ["INT-AHA-ALS"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-AHA-ALS"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "metoprolol", name: "Metoprolol (tartarato, IV)", drugClass: "Betabloqueador seletivo",
+    presentations: [{ id: "amp5", label: "Ampola 1 mg/mL (5 mL)", concentration: q(1, "mg/mL"), form: "ampola", volumeMl: 5 }],
+    routes: ["IV"], indications: ["Controle de frequência/força de ejeção (ex.: síndrome aórtica aguda, FA com resposta rápida sem IC descompensada)"], contraindications: ["Choque, IC descompensada, BAV avançado, broncoespasmo grave"], interactions: ["Bloqueadores de canal de cálcio não di-hidropiridínicos: bradicardia/BAV"],
+    onset: "Minutos", duration: "Horas",
+    doseRules: [r("meto-adulto", "adulto", "Controle de FC", "IV", "bolus", q(2.5, "mg"), q(5, "mg"), ["INT-ESC-AORTA-2024"], { frequency: "a cada 5 min, até 15 mg (conferir)" }), r("meto-idoso", "idoso", "Controle de FC", "IV", "bolus", q(2.5, "mg"), q(5, "mg"), ["INT-ESC-AORTA-2024"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "nitroprussiato", name: "Nitroprussiato de sódio", drugClass: "Vasodilatador arterial e venoso",
+    presentations: [{ id: "sol200", label: "Solução preparada 50 mg/250 mL SG5% (200 microgramas/mL), protegida da luz", concentration: q(200, "mcg/mL"), form: "bolsa", volumeMl: 250 }],
+    routes: ["IV"], indications: ["Emergência hipertensiva com necessidade de controle titulável (após betabloqueio na síndrome aórtica)"], contraindications: ["Hipotensão"], interactions: ["Toxicidade por cianeto/tiocianato em doses altas/prolongadas"],
+    onset: "Segundos", duration: "Minutos",
+    doseRules: [r("nps-adulto", "adulto", "Emergência hipertensiva", "IV", "infusao", q(0.25, "mcg/kg/min"), q(10, "mcg/kg/min"), ["INT-ESC-AORTA-2024"], { notes: "Titular; faixa a conferir." }), r("nps-idoso", "idoso", "Emergência hipertensiva", "IV", "infusao", q(0.25, "mcg/kg/min"), q(10, "mcg/kg/min"), ["INT-ESC-AORTA-2024"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "heparina", name: "Heparina não fracionada", drugClass: "Anticoagulante",
+    presentations: [{ id: "fa5000", label: "Frasco-ampola 5.000 UI/mL (5 mL)", concentration: q(5000, "UI/mL"), form: "frasco_ampola", volumeMl: 5 }],
+    routes: ["IV", "SC"], indications: ["TEP/TVP (especialmente instável ou candidato a trombólise)", "SCA"], contraindications: ["Sangramento ativo", "Plaquetopenia induzida por heparina"], interactions: ["Antiagregantes e trombolíticos aumentam sangramento"],
+    onset: "Imediato (IV)", duration: "Horas",
+    doseRules: [r("hnf-bolus", "adulto", "TEP", "IV", "bolus", q(80, "UI/kg"), q(80, "UI/kg"), ["INT-ESC-TEP-2019"], { notes: "Seguido de infusão ajustada por TTPa (conferir nomograma)." }), r("hnf-inf", "adulto", "TEP", "IV", "infusao", q(18, "UI/kg/h"), q(18, "UI/kg/h"), ["INT-ESC-TEP-2019"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "omeprazol", name: "Omeprazol (IV)", drugClass: "Inibidor de bomba de prótons",
+    presentations: [{ id: "fa40", label: "Frasco-ampola 40 mg", concentration: q(40, "mg"), form: "frasco_ampola" }],
+    routes: ["IV"], indications: ["Hemorragia digestiva alta presumivelmente péptica (antes e após endoscopia)"], contraindications: [], interactions: ["Clopidogrel (interação discutida)"],
+    onset: "Horas", duration: "—",
+    doseRules: [r("ome-adulto", "adulto", "HDA", "IV", "bolus", q(40, "mg"), q(80, "mg"), ["INT-ACG-HDA-2021"], { notes: "Esquemas variam (bolus + infusão ou intermitente); conferir." }), r("ome-idoso", "idoso", "HDA", "IV", "bolus", q(40, "mg"), q(80, "mg"), ["INT-ACG-HDA-2021"])],
+    availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "terlipressina", name: "Terlipressina", drugClass: "Análogo da vasopressina (vasoconstritor esplâncnico)",
+    presentations: [{ id: "fa1mg", label: "Frasco-ampola 1 mg", concentration: q(1, "mg"), form: "frasco_ampola" }],
+    routes: ["IV"], indications: ["Suspeita de hemorragia varicosa em hepatopata"], contraindications: ["Doença isquêmica coronariana/periférica grave (cautela)"], interactions: [],
+    onset: "Minutos", duration: "4–6 h",
+    doseRules: [r("terli-adulto", "adulto", "HDA varicosa", "IV", "bolus", q(1, "mg"), q(2, "mg"), ["INT-BAVENO-VII"], { frequency: "a cada 4 h (conferir)" }), r("terli-idoso", "idoso", "HDA varicosa", "IV", "bolus", q(1, "mg"), q(2, "mg"), ["INT-BAVENO-VII"])],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-BAVENO-VII"], reviewedAt: REV, validation: "pendente"
   },
   {
     id: "nitroglicerina", name: "Nitroglicerina", drugClass: "Nitrato / vasodilatador",

@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **25** (prioritários: 24/24)
+- Casos implementados e registrados: **30** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -20,11 +20,11 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C009 | Dor torácica isquêmica com alteração no ECG | sim | technicallyTested | 5 | hospital-regional | sim |
 | C010 | Dor torácica sem elevação persistente do segmento ST | não | — | 0 | — |  |
 | C011 | Dispneia com congestão pulmonar e hipertensão | sim | technicallyTested | 5 | upa-porte-ii | sim |
-| C012 | Palpitações regulares em pessoa estável | não | — | 0 | — |  |
-| C013 | Taquicardia com repercussão hemodinâmica | não | — | 0 | — |  |
-| C014 | Bradicardia com síncope e hipoperfusão | não | — | 0 | — |  |
-| C015 | Dor torácica abrupta irradiada para o dorso | não | — | 0 | — |  |
-| C016 | Dispneia e dor pleurítica após imobilização | não | — | 0 | — |  |
+| C012 | Palpitações regulares em pessoa estável | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C013 | Taquicardia com repercussão hemodinâmica | sim | technicallyTested | 5 | hospital-regional |  |
+| C014 | Bradicardia com síncope e hipoperfusão | sim | technicallyTested | 5 | hospital-regional |  |
+| C015 | Dor torácica abrupta irradiada para o dorso | sim | technicallyTested | 6 | hospital-regional |  |
+| C016 | Dispneia e dor pleurítica após imobilização | sim | technicallyTested | 5 | hospital-regional |  |
 | C017 | Crise asmática com dificuldade para falar | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C018 | Exacerbação de doença pulmonar obstrutiva | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C019 | Febre, tosse e hipoxemia em idoso | não | — | 0 | — |  |

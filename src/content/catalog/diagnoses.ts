@@ -39,6 +39,7 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("icc_descompensada", "Insuficiência cardíaca descompensada", "Cardiologia"),
   D("tsv", "Taquicardia supraventricular", "Cardiologia"),
   D("fa_alta_resposta", "Fibrilação atrial com alta resposta", "Cardiologia"),
+  D("tv_instavel", "Taquicardia ventricular com pulso e instabilidade", "Cardiologia", ["TV instável", "taquicardia ventricular"]),
   D("bav_total", "Bloqueio atrioventricular total", "Cardiologia"),
   D("dor_toracica_musculoesqueletica", "Dor torácica musculoesquelética", "Cardiologia"),
   // Pneumo
