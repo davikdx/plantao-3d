@@ -700,6 +700,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["INT-SFE-HIPONA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "tansulosina", name: "Tansulosina", drugClass: "Alfa-1 bloqueador uroseletivo",
+    presentations: [{ id: "cp04", label: "Cápsula 0,4 mg", concentration: q(0.4, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Hiperplasia prostática benigna; antes da retirada da sonda após retenção urinária aguda"], contraindications: ["Hipotensão ortostática importante"], interactions: ["Outros alfabloqueadores e anti-hipertensivos (hipotensão)"],
+    onset: "Horas", duration: "24 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-EAU-RU-2019", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
