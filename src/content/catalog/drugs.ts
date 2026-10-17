@@ -528,8 +528,8 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "amp05", label: "Ampola 0,5 mg/mL (1 mL) — conferir concentração disponível", concentration: q(0.5, "mg/mL"), form: "ampola", volumeMl: 1 }],
     routes: ["IV"], indications: ["Bradicardia sintomática", "Intoxicação por organofosforado (doses tituladas)"], contraindications: [], interactions: [],
     onset: "1 min", duration: "30–60 min",
-    doseRules: [r("atr-bradi", "adulto", "Bradicardia", "IV", "bolus", q(0.5, "mg"), q(1, "mg"), ["INT-AHA-ALS"], { maxCumulative: q(3, "mg"), notes: "Conferir dose na diretriz vigente." })],
-    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+    doseRules: [r("atr-bradi", "adulto", "Bradicardia", "IV", "bolus", q(0.5, "mg"), q(1, "mg"), ["INT-AHA-ALS"], { maxCumulative: q(3, "mg"), notes: "Conferir dose na diretriz vigente." }), r("atr-op", "adulto", "Intoxicação por organofosforado — dose inicial", "IV", "bolus", q(1.2, "mg"), q(3, "mg"), ["INT-QLD-ATROPINA-2023", "INT-LITFL-OP"], { notes: "Sem resposta em 5 min: dobrar a dose anterior a cada 5 min até atropinização (tórax limpo, FC > 80, PAS > 80); doses dobradas excedem esta faixa inicial. Depois, infusão de 10–20% da dose total de ataque por hora." }), r("atr-op-ped", "pediatrico", "Intoxicação por organofosforado — dose inicial", "IV", "bolus", q(0.02, "mg/kg"), q(0.05, "mg/kg"), ["INT-QLD-ATROPINA-2023", "INT-LITFL-OP"], { notes: "Fontes divergem (0,02 mg/kg × 50 mcg/kg); dobrar a cada 5 min até atropinização." })],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-QLD-ATROPINA-2023", "INT-LITFL-OP"], reviewedAt: REV, validation: "pendente"
   },
   {
     id: "acetilcisteina", name: "Acetilcisteína (IV)", drugClass: "Antídoto do paracetamol",
