@@ -732,11 +732,35 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "gliclazida", name: "Gliclazida MR", drugClass: "Sulfonilureia",
+    presentations: [{ id: "cp30", label: "Comprimido de liberação prolongada 30 mg", concentration: q(30, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["DM2 — associada à metformina (SU de escolha da SBD pelo menor risco de hipoglicemia)"], contraindications: ["Insuficiência renal ou hepática grave", "DM1"], interactions: ["Hipoglicemia com álcool e jejum"],
+    onset: "Horas", duration: "24 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "glibenclamida", name: "Glibenclamida", drugClass: "Sulfonilureia",
+    presentations: [{ id: "cp5", label: "Comprimido 5 mg", concentration: q(5, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["DM2 (maior risco de hipoglicemia que a gliclazida)"], contraindications: ["Insuficiência renal", "Idoso frágil (hipoglicemia)"], interactions: ["Hipoglicemia com álcool e jejum"],
+    onset: "Horas", duration: "Longa",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "dapagliflozina", name: "Dapagliflozina", drugClass: "Inibidor de SGLT2",
+    presentations: [{ id: "cp10", label: "Comprimido 10 mg", concentration: q(10, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["DM2 com doença cardiovascular estabelecida ou risco (critérios do SUS)", "IC com FEVE ≤ 40%", "DRC"], contraindications: ["DM1", "Cetoacidose prévia"], interactions: ["Risco de desidratação com diuréticos"],
+    onset: "Dias", duration: "24 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "metformina", name: "Metformina", drugClass: "Biguanida",
     presentations: [{ id: "cp500", label: "Comprimido 500 mg", concentration: q(500, "mg"), form: "comprimido" }, { id: "cp850", label: "Comprimido 850 mg", concentration: q(850, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["DM2 — primeira linha"], contraindications: ["TFG < 30 mL/min/1,73 m²", "Acidose, choque, hipóxia"], interactions: ["Contraste iodado (suspender conforme função renal)"],
     onset: "Dias", duration: "—",
-    doseRules: [r("met-inicio", "adulto", "DM2 — dose inicial", "VO", "bolus", q(500, "mg"), q(850, "mg"), ["BR-SBD-SUS-2026"], { frequency: "1–2 vezes ao dia, com refeição; titular gradualmente (conferir)", notes: "Máximo 1000 mg/dia se TFG < 45; suspender se < 30." })],
+    doseRules: [r("met-inicio", "adulto", "DM2 — dose inicial", "VO", "bolus", q(500, "mg"), q(850, "mg"), ["BR-SBD-SUS-2026"], { frequency: "1–2 vezes ao dia, com refeição; titular gradualmente (conferir)", notes: "Máximo 1000 mg/dia se TFG < 45; suspender se < 30." }), r("met-idoso", "idoso", "DM2", "VO", "bolus", q(500, "mg"), q(850, "mg"), ["BR-SBD-SUS-2026"], { notes: "Máximo 1000 mg/dia se TFG < 45; suspender se < 30." })],
     availability: ["medicacoes_basicas"], sourceIds: ["BR-SBD-SUS-2026", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
   },
   {
