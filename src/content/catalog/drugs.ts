@@ -299,6 +299,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["INT-WIKEM-GLAUCOMA-2026"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "ampicilina_sulbactam", name: "Ampicilina + sulbactam", drugClass: "Penicilina + inibidor de betalactamase",
+    presentations: [{ id: "fa3g", label: "Frasco-ampola 2 g + 1 g (3 g)", concentration: q(3000, "mg"), form: "frasco_ampola" }],
+    routes: ["IV"], indications: ["Infecção odontogênica grave/espaços cervicais profundos (angina de Ludwig)"], contraindications: ["Alergia a penicilinas"], interactions: [],
+    onset: "—", duration: "—",
+    doseRules: [r("ams-ludwig", "adulto", "Angina de Ludwig", "IV", "bolus", q(3000, "mg"), q(3000, "mg"), ["INT-WIKEM-LUDWIG"], { frequency: "6/6 h" })],
+    availability: ["medicacoes_urgencia"], sourceIds: ["INT-WIKEM-LUDWIG"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "fluoxetina", name: "Fluoxetina", drugClass: "Antidepressivo ISRS",
     presentations: [{ id: "cp20", label: "Cápsula 20 mg", concentration: q(20, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["Episódio depressivo (com psicoterapia nos casos mais graves ou por preferência)"], contraindications: ["Uso de IMAO", "Episódio maníaco atual"], interactions: ["Serotoninérgicos (síndrome serotoninérgica)", "Inibição de CYP2D6"],
