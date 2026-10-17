@@ -95,7 +95,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "fa1g", label: "Frasco-ampola 1 g (reconstituir)", concentration: q(100, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV", "IM"], indications: ["Infecções bacterianas graves conforme foco e epidemiologia"], contraindications: ["Alergia grave a betalactâmicos", "Neonatos com hiperbilirrubinemia/cálcio IV"], interactions: [],
     onset: "—", duration: "24 h (meia-vida longa)",
-    doseRules: [r("cef-adulto", "adulto", "Infecção grave", "IV", "bolus", q(1000, "mg"), q(2000, "mg"), ["INT-SSC-2021"], { notes: "Escolha do antimicrobiano depende do foco e protocolo local." }), r("cef-idoso", "idoso", "Infecção grave", "IV", "bolus", q(1000, "mg"), q(2000, "mg"), ["INT-SSC-2021"]), r("cef-ped", "pediatrico", "Infecção grave", "IV", "bolus", q(50, "mg/kg"), q(100, "mg/kg"), ["BR-SAMU-SAV"], { maxSingle: q(2000, "mg") })],
+    doseRules: [r("cef-adulto", "adulto", "Infecção grave", "IV", "bolus", q(1000, "mg"), q(2000, "mg"), ["INT-SSC-2021"], { notes: "Escolha do antimicrobiano depende do foco e protocolo local." }), r("cef-dip-im", "adulto", "DIP ambulatorial / parceria de IST", "IM", "bolus", q(500, "mg"), q(500, "mg"), ["BR-PCDT-IST-DIP-2021"], { notes: "Dose única IM." }), r("cef-idoso", "idoso", "Infecção grave", "IV", "bolus", q(1000, "mg"), q(2000, "mg"), ["INT-SSC-2021"]), r("cef-ped", "pediatrico", "Infecção grave", "IV", "bolus", q(50, "mg/kg"), q(100, "mg/kg"), ["BR-SAMU-SAV"], { maxSingle: q(2000, "mg") })],
     availability: ["medicacoes_urgencia", "medicacoes_basicas"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
@@ -376,7 +376,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "cp500", label: "Comprimido 500 mg", concentration: q(500, "mg"), form: "comprimido" }, { id: "fa500", label: "Frasco-ampola 500 mg (IV)", concentration: q(500, "mg"), form: "frasco_ampola" }],
     routes: ["VO", "IV"], indications: ["Cobertura de atípicos na pneumonia adquirida na comunidade (associada a betalactâmico quando indicado)"], contraindications: ["QT longo (cautela)"], interactions: ["Prolongamento de QT"],
     onset: "—", duration: "—",
-    doseRules: [r("azi-adulto", "adulto", "PAC", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"], { frequency: "1x/dia (conferir duração)" }), r("azi-adulto-iv", "adulto", "PAC", "IV", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"]), r("azi-idoso", "idoso", "PAC", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"]), r("azi-idoso-iv", "idoso", "PAC", "IV", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"])],
+    doseRules: [r("azi-adulto", "adulto", "PAC", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"], { frequency: "1x/dia (conferir duração)" }), r("azi-parceria", "adulto", "Tratamento de parceria (clamídia)", "VO", "bolus", q(1000, "mg"), q(1000, "mg"), ["BR-PCDT-IST-DIP-2021"], { notes: "Dose única, com ceftriaxona 500 mg IM." }), r("azi-adulto-iv", "adulto", "PAC", "IV", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"]), r("azi-idoso", "idoso", "PAC", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"]), r("azi-idoso-iv", "idoso", "PAC", "IV", "bolus", q(500, "mg"), q(500, "mg"), ["INT-ATS-PAC-2019"])],
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
   },
   {
@@ -733,11 +733,11 @@ const drugsRaw: DrugDefinition[] = [
   },
   {
     id: "metronidazol", name: "Metronidazol", drugClass: "Nitroimidazólico (anaerobicida)",
-    presentations: [{ id: "bolsa500", label: "Bolsa 500 mg/100 mL", concentration: q(5, "mg/mL"), form: "bolsa", volumeMl: 100 }],
-    routes: ["IV"], indications: ["Cobertura de anaeróbios em infecção intra-abdominal (associado)", "C. difficile fulminante (IV, associado à vancomicina oral)"], contraindications: ["Hipersensibilidade"], interactions: ["Efeito dissulfiram com álcool", "Varfarina"],
+    presentations: [{ id: "bolsa500", label: "Bolsa 500 mg/100 mL", concentration: q(5, "mg/mL"), form: "bolsa", volumeMl: 100 }, { id: "cp250", label: "Comprimido 250 mg", concentration: q(250, "mg"), form: "comprimido" }],
+    routes: ["IV", "VO"], indications: ["Doença inflamatória pélvica (VO, associado)", "Cobertura de anaeróbios em infecção intra-abdominal (associado)", "C. difficile fulminante (IV, associado à vancomicina oral)"], contraindications: ["Hipersensibilidade"], interactions: ["Efeito dissulfiram com álcool", "Varfarina"],
     onset: "—", duration: "8 h",
-    doseRules: [],
-    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-IDSA-CDI-2021"], reviewedAt: REV, validation: "pendente"
+    doseRules: [r("metro-dip", "adulto", "Doença inflamatória pélvica", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["BR-PCDT-IST-DIP-2021"], { frequency: "12/12 h por 14 dias; evitar álcool" })],
+    availability: ["medicacoes_urgencia", "medicacoes_basicas"], sourceIds: ["BR-ANVISA", "INT-IDSA-CDI-2021", "BR-PCDT-IST-DIP-2021"], reviewedAt: REV, validation: "pendente"
   },
   {
     id: "albumina", name: "Albumina humana 20%", drugClass: "Coloide (hemoderivado)",
@@ -794,7 +794,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "cp100", label: "Comprimido 100 mg", concentration: q(100, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["Febre maculosa (todas as idades, conforme MS)", "Leptospirose (formas leves)"], contraindications: [], interactions: ["Antiácidos reduzem absorção"],
     onset: "—", duration: "12 h",
-    doseRules: [r("doxi-adulto", "adulto", "Febre maculosa", "VO", "bolus", q(100, "mg"), q(100, "mg"), ["BR-FM", "BR-FM-2026"], { frequency: "12/12 h (conferir duração)" })],
+    doseRules: [r("doxi-adulto", "adulto", "Febre maculosa", "VO", "bolus", q(100, "mg"), q(100, "mg"), ["BR-FM", "BR-FM-2026"], { frequency: "12/12 h (conferir duração)" }), r("doxi-dip", "adulto", "Doença inflamatória pélvica", "VO", "bolus", q(100, "mg"), q(100, "mg"), ["BR-PCDT-IST-DIP-2021"], { frequency: "12/12 h por 14 dias; contraindicada na gestação" })],
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-FM", "BR-FM-2026"], reviewedAt: REV, validation: "pendente"
   },
   {
