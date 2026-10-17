@@ -235,6 +235,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-GESTACAO"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "risperidona", name: "Risperidona", drugClass: "Antipsicótico atípico",
+    presentations: [{ id: "cp1", label: "Comprimido 1 mg", concentration: q(1, "mg"), form: "comprimido" }, { id: "sol1", label: "Solução oral 1 mg/mL", concentration: q(1, "mg/mL"), form: "frasco", volumeMl: 30 }],
+    routes: ["VO"], indications: ["Agitação psicótica em paciente colaborativo (VO)", "Mania aguda (primeira linha, isolada ou com estabilizador)"], contraindications: ["QT longo", "Demência (risco cerebrovascular)"], interactions: ["Sintomas extrapiramidais; hiperprolactinemia"],
+    onset: "1–2 h (VO)", duration: "~24 h",
+    doseRules: [r("risp-agit", "adulto", "Agitação em paciente colaborativo", "VO", "bolus", q(2, "mg"), q(3, "mg"), ["BR-ABP-AGITACAO-2019"], { maxCumulative: q(8, "mg"), notes: "Máximo 8 mg/24 h." })],
+    availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ABP-AGITACAO-2019", "INT-CANMAT-MANIA-2018"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "carbonato_litio", name: "Carbonato de lítio", drugClass: "Estabilizador do humor",
+    presentations: [{ id: "cp300", label: "Comprimido 300 mg", concentration: q(300, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Mania aguda (primeira linha)", "Manutenção no transtorno bipolar"], contraindications: ["Insuficiência renal", "Desidratação/hiponatremia"], interactions: ["AINE, IECA, tiazídicos elevam a litemia"],
+    onset: "Dias", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-CANMAT-MANIA-2018"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "haloperidol", name: "Haloperidol", drugClass: "Antipsicótico típico (butirofenona)",
     presentations: [{ id: "amp5", label: "Ampola 5 mg/mL (1 mL)", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 1 }],
     routes: ["IM"], indications: ["Agitação psicótica (isolado ou com prometazina/midazolam)", "Agitação na intoxicação alcoólica (menor depressão respiratória)"], contraindications: ["Parkinsonismo/demência com corpos de Lewy", "QT longo"], interactions: ["Prolonga QT; sintomas extrapiramidais"],
