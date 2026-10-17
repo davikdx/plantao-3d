@@ -169,6 +169,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-UKKA-HIPERK"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "beclometasona", name: "Beclometasona (aerossol inalatório)", drugClass: "Corticoide inalatório",
+    presentations: [{ id: "spray250", label: "Aerossol 250 microgramas/jato (com espaçador)", concentration: q(250, "mcg/mL"), form: "spray" }],
+    routes: ["inalatoria"], indications: ["Asma — manutenção (Trilha 2)"], contraindications: [], interactions: ["Candidíase oral (enxaguar a boca)"],
+    onset: "Dias", duration: "12 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-ASMA", "INT-GINA-2023-RESUMO"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "budesonida_formoterol", name: "Budesonida + formoterol (inalador)", drugClass: "Corticoide inalatório + LABA de início rápido",
+    presentations: [{ id: "inal200", label: "Inalador 200/6 microgramas por inalação (dose em budesonida)", concentration: q(200, "mcg/mL"), form: "spray" }],
+    routes: ["inalatoria"], indications: ["Asma — aliviador anti-inflamatório (Etapas 1–2) ou manutenção e alívio (MART, Etapas 3–5)"], contraindications: [], interactions: [],
+    onset: "Minutos (formoterol)", duration: "12 h",
+    doseRules: [r("bud-form-air", "adulto", "Alívio/MART", "inalatoria", "bolus", q(200, "mcg"), q(200, "mcg"), ["INT-GINA-2023-RESUMO"], { maxCumulative: q(2400, "mcg"), notes: "1 inalação conforme necessidade; máximo 12 inalações/dia no adulto (exemplo 200/6). Na MART, soma-se à manutenção diária." })],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-GINA-2023-RESUMO", "BR-ASMA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "salbutamol", name: "Salbutamol", drugClass: "Beta-2 agonista de curta ação",
     presentations: [{ id: "spray100", label: "Aerossol 100 microgramas/jato (com espaçador)", concentration: q(100, "mcg/mL"), form: "spray" }, { id: "neb5", label: "Solução para nebulização 5 mg/mL", concentration: q(5, "mg/mL"), form: "solucao_nebulizacao" }],
     routes: ["inalatoria", "nebulizacao"], indications: ["Broncoespasmo", "Adjuvante na hipercalemia (nebulização)"], contraindications: [], interactions: ["Hipocalemia, taquicardia"],

@@ -169,6 +169,7 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("urgencia_hipertensiva_lesao", "Emergência hipertensiva com lesão de órgão-alvo", "Atenção primária"),
   D("pseudocrise_hipertensiva", "Elevação pressórica sem lesão aguda de órgão-alvo", "Atenção primária"),
   D("dm2_descompensado", "Diabetes tipo 2 fora da meta", "Atenção primária"),
+  D("asma_nao_controlada", "Asma não controlada (sem exacerbação)", "Atenção primária"),
   D("quedas_polifarmacia", "Quedas associadas a polifarmácia e medicamentos potencialmente inapropriados", "Atenção primária"),
   D("febre_maculosa", "Febre maculosa", "Infectologia"),
   D("dengue_alarme", "Dengue com sinais de alarme", "Infectologia"),
