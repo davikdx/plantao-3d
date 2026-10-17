@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **86** (prioritários: 24/24)
+- Casos implementados e registrados: **92** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -90,13 +90,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C079 | Dor pélvica súbita com náuseas | sim | technicallyTested | 5 | hospital-regional |  |
 | C080 | Consulta pré-natal com fator de risco identificado | sim | technicallyTested | 5 | ubs-urbana |  |
 | C081 | Lactente com esforço respiratório e dificuldade de alimentação | sim | technicallyTested | 5 | upa-porte-ii | sim |
-| C082 | Criança com sibilância intensa | não | — | 0 | — |  |
+| C082 | Criança com sibilância intensa | sim | technicallyTested | 5 | upa-porte-ii |  |
 | C083 | Diarreia em criança com desidratação | sim | technicallyTested | 5 | upa-porte-ii | sim |
-| C084 | Febre em lactente pequeno com aparência alterada | não | — | 0 | — |  |
-| C085 | Criança com febre e convulsão | não | — | 0 | — |  |
-| C086 | Criança com estridor e tosse característica | não | — | 0 | — |  |
-| C087 | Vômitos, dor abdominal e letargia em criança | não | — | 0 | — |  |
-| C088 | Recém-nascido com icterícia e fator de risco | não | — | 0 | — |  |
+| C084 | Febre em lactente pequeno com aparência alterada | sim | technicallyTested | 5 | hospital-regional |  |
+| C085 | Criança com febre e convulsão | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C086 | Criança com estridor e tosse característica | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C087 | Vômitos, dor abdominal e letargia em criança | sim | technicallyTested | 5 | hospital-regional |  |
+| C088 | Recém-nascido com icterícia e fator de risco | sim | technicallyTested | 5 | hospital-regional |  |
 | C089 | Ingestão excessiva de paracetamol | sim | technicallyTested | 5 | hospital-regional | sim |
 | C090 | Exposição a organofosforado | não | — | 0 | — |  |
 | C091 | Rebaixamento e hipoventilação após opioide | sim | technicallyTested | 5 | samu-usa |  |
