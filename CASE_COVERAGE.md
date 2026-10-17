@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **98** (prioritários: 24/24)
+- Casos implementados e registrados: **105** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -106,13 +106,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C095 | Exposição a monóxido de carbono | sim | technicallyTested | 5 | hospital-regional |  |
 | C096 | Intoxicação alcoólica com risco de aspiração | sim | technicallyTested | 5 | hospital-regional |  |
 | C097 | Ideação suicida com plano em contexto de crise | sim | technicallyTested | 5 | ubs-urbana | sim |
-| C098 | Agitação psicomotora com causa ainda desconhecida | não | — | 0 | — |  |
-| C099 | Primeiro episódio psicótico | não | — | 0 | — |  |
-| C100 | Humor expansivo, insônia e comportamento de risco | não | — | 0 | — |  |
-| C101 | Ansiedade intensa com sintomas torácicos | não | — | 0 | — |  |
-| C102 | Abstinência alcoólica com sinais de gravidade | não | — | 0 | — |  |
-| C103 | Alteração aguda e flutuante da atenção no idoso | não | — | 0 | — |  |
-| C104 | Febre e rigidez em usuário de psicofármaco | não | — | 0 | — |  |
+| C098 | Agitação psicomotora com causa ainda desconhecida | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C099 | Primeiro episódio psicótico | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C100 | Humor expansivo, insônia e comportamento de risco | sim | technicallyTested | 5 | hospital-regional |  |
+| C101 | Ansiedade intensa com sintomas torácicos | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C102 | Abstinência alcoólica com sinais de gravidade | sim | technicallyTested | 5 | hospital-regional |  |
+| C103 | Alteração aguda e flutuante da atenção no idoso | sim | technicallyTested | 5 | hospital-regional |  |
+| C104 | Febre e rigidez em usuário de psicofármaco | sim | technicallyTested | 5 | hospital-regional |  |
 | C105 | Hipertensão persistente em seguimento | sim | technicallyTested | 5 | ubs-urbana | sim |
 | C106 | Pressão elevada com sintomas de possível lesão aguda | não | — | 0 | — |  |
 | C107 | Diabetes fora da meta com esquema inadequado | não | — | 0 | — |  |

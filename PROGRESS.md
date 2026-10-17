@@ -13,10 +13,10 @@ Atualizado em 16/10/2026.
 - Ícones e splash próprios (tools/scripts/make_icons.py).
 
 ## Em andamento
-- Casos prontos: C001–C099, C105 (100 + T000); Psiquiatria em andamento (C097–C099 prontos). Próximo: C100 (episódio maníaco — catálogo já preparado: risperidona, carbonato_litio, toxicologico_urina, suspender_medicacao_desencadeante, refs INT-CANMAT-MANIA-2018 e INT-FEDPRACT-MANIA-2016), depois C101–C104, APS (C106–C112) e Outras urgências (C113–C120).
+- Casos prontos: C001–C105 (105 + T000); grupos Trauma, Endocrinologia, Nefrologia, Gastroenterologia, Obstetrícia/Ginecologia, Pediatria, Toxicologia e Psiquiatria completos. Próximo: C106 (APS), depois C107–C112 e Outras urgências (C113–C120).
 
 ## Pendente
-1. 20 casos do catálogo (ver CASE_COVERAGE.md). Ao escrever, ampliar catálogos (ex.: antibióticos, anti-D, cloranfenicol, labetalol) com `validation: "pendente"`.
+1. 15 casos do catálogo (ver CASE_COVERAGE.md). Ao escrever, ampliar catálogos (ex.: antibióticos, anti-D, cloranfenicol, labetalol) com `validation: "pendente"`.
 2. Revisão clínica qualificada (nenhum caso revisado) e conferência das fontes "não acessado".
 3. Chave de release: gerar keystore e cadastrar os secrets PLANTAO_KEYSTORE_B64, PLANTAO_KEY_ALIAS, PLANTAO_KEYSTORE_PASSWORD, PLANTAO_KEY_PASSWORD (README).
 4. Teste em aparelho Android físico ou emulador (não executado).
