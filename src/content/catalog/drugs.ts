@@ -28,12 +28,12 @@ const drugsRaw: DrugDefinition[] = [
   {
     id: "adrenalina", name: "Adrenalina (epinefrina)", drugClass: "Simpaticomimético / vasopressor",
     presentations: [{ id: "amp1mg", label: "Ampola 1 mg/mL (1 mL)", concentration: q(1, "mg/mL"), form: "ampola", volumeMl: 1 }],
-    routes: ["IM", "IV", "IO"],
+    routes: ["IM", "IV", "IO", "nebulizacao"],
     indications: ["Anafilaxia (IM)", "Parada cardiorrespiratória (IV/IO)", "Choque refratário (infusão)"],
     contraindications: ["Na anafilaxia não há contraindicação absoluta à adrenalina IM"],
     interactions: ["Betabloqueadores podem reduzir resposta"],
     onset: "IM: minutos; IV: imediato", duration: "Curta (minutos)",
-    doseRules: [
+    doseRules: [r("adr-neb-crupe", "pediatrico", "Crupe grave", "nebulizacao", "bolus", q(5, "mg"), q(5, "mg"), ["INT-TREKK-CRUPE-2023"], { notes: "5 mL da solução 1 mg/mL nebulizados; repetir se necessário; observar ≥ 2 h." }), 
       r("adr-ana-adulto", "adulto", "Anafilaxia", "IM", "bolus", q(0.3, "mg"), q(0.5, "mg"), ["INT-WAO-ANAFILAXIA"], { maxSingle: q(0.5, "mg"), frequency: "pode repetir a cada 5–15 min se necessário" }),
       r("adr-ana-idoso", "idoso", "Anafilaxia", "IM", "bolus", q(0.3, "mg"), q(0.5, "mg"), ["INT-WAO-ANAFILAXIA"]),
       r("adr-ana-ped", "pediatrico", "Anafilaxia", "IM", "bolus", q(0.01, "mg/kg"), q(0.01, "mg/kg"), ["INT-WAO-ANAFILAXIA"], { maxSingle: q(0.5, "mg") }),
@@ -400,7 +400,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "amp10", label: "Ampola 4 mg/mL (2,5 mL = 10 mg)", concentration: q(4, "mg/mL"), form: "ampola", volumeMl: 2.5 }, { id: "elixir", label: "Elixir 0,1 mg/mL", concentration: q(0.1, "mg/mL"), form: "frasco" }],
     routes: ["IV", "IM", "VO"], indications: ["Meningite bacteriana suspeita (antes ou junto da 1ª dose do antibiótico)", "Edema vasogênico", "Crupe", "Crise de asma pediátrica"], contraindications: [], interactions: [],
     onset: "Horas", duration: "36–54 h",
-    doseRules: [r("dexa-meningite", "adulto", "Meningite bacteriana", "IV", "bolus", q(10, "mg"), q(10, "mg"), ["INT-ESCMID-MENINGITE-2016"], { frequency: "6/6 h por 4 dias (conferir)" }), r("dexa-crupe", "pediatrico", "Crupe", "VO", "bolus", q(0.15, "mg/kg"), q(0.6, "mg/kg"), ["INT-AHA-ALS"], { notes: "Faixa a conferir em diretriz pediátrica." })],
+    doseRules: [r("dexa-meningite", "adulto", "Meningite bacteriana", "IV", "bolus", q(10, "mg"), q(10, "mg"), ["INT-ESCMID-MENINGITE-2016"], { frequency: "6/6 h por 4 dias (conferir)" }), r("dexa-crupe", "pediatrico", "Crupe", "VO", "bolus", q(0.15, "mg/kg"), q(0.6, "mg/kg"), ["INT-AHA-ALS", "INT-TREKK-CRUPE-2023"], { notes: "Faixa a conferir em diretriz pediátrica." })],
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
