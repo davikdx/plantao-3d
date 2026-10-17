@@ -251,6 +251,30 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-GESTACAO"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "clonazepam", name: "Clonazepam", drugClass: "Benzodiazepínico",
+    presentations: [{ id: "cp2", label: "Comprimido 2 mg", concentration: q(2, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Agitação na abstinência alcoólica/intoxicação por cocaína leve a moderada (alternativa)"], contraindications: ["Idosos (quedas, delirium)", "Insuficiência respiratória"], interactions: ["Depressão respiratória com álcool e opioides"],
+    onset: "30–60 min", duration: "Longa",
+    doseRules: [r("clz-agit", "adulto", "Agitação (abstinência/cocaína)", "VO", "bolus", q(2, "mg"), q(2, "mg"), ["BR-ABP-AGITACAO-2019"], { maxCumulative: q(8, "mg"), notes: "Máx. 8 mg/24 h." })],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-ABP-AGITACAO-2019", "INT-AGS-BEERS-2023"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "fluoxetina", name: "Fluoxetina", drugClass: "Antidepressivo ISRS",
+    presentations: [{ id: "cp20", label: "Cápsula 20 mg", concentration: q(20, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Episódio depressivo (com psicoterapia nos casos mais graves ou por preferência)"], contraindications: ["Uso de IMAO", "Episódio maníaco atual"], interactions: ["Serotoninérgicos (síndrome serotoninérgica)", "Inibição de CYP2D6"],
+    onset: "2–4 semanas", duration: "Longa (meia-vida longa)",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-RENAME", "INT-NICE-DEPRESSAO-2022"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "sertralina", name: "Sertralina", drugClass: "Antidepressivo ISRS",
+    presentations: [{ id: "cp50", label: "Comprimido 50 mg", concentration: q(50, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Episódio depressivo", "Transtornos de ansiedade/pânico"], contraindications: ["Uso de IMAO", "Episódio maníaco atual"], interactions: ["Serotoninérgicos (síndrome serotoninérgica)"],
+    onset: "2–4 semanas", duration: "24 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-NICE-DEPRESSAO-2022"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "risperidona", name: "Risperidona", drugClass: "Antipsicótico atípico",
     presentations: [{ id: "cp1", label: "Comprimido 1 mg", concentration: q(1, "mg"), form: "comprimido" }, { id: "sol1", label: "Solução oral 1 mg/mL", concentration: q(1, "mg/mL"), form: "frasco", volumeMl: 30 }],
     routes: ["VO"], indications: ["Agitação psicótica em paciente colaborativo (VO)", "Mania aguda (primeira linha, isolada ou com estabilizador)"], contraindications: ["QT longo", "Demência (risco cerebrovascular)"], interactions: ["Sintomas extrapiramidais; hiperprolactinemia"],
