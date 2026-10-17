@@ -275,6 +275,30 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["INT-USMEC-2024"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "timolol", name: "Timolol 0,5% colírio", drugClass: "Betabloqueador tópico ocular",
+    presentations: [{ id: "col05", label: "Colírio 5 mg/mL (1 gota ≈ 0,25 mg)", concentration: q(5, "mg/mL"), form: "frasco", volumeMl: 5 }],
+    routes: ["ocular"], indications: ["Glaucoma agudo de ângulo fechado (redução da PIO)"], contraindications: ["Asma/DPOC grave", "Bradicardia, BAV"], interactions: ["Absorção sistêmica"],
+    onset: "30–60 min", duration: "12 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-WIKEM-GLAUCOMA-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "pilocarpina", name: "Pilocarpina 2% colírio", drugClass: "Colinérgico (miótico) tópico",
+    presentations: [{ id: "col2", label: "Colírio 20 mg/mL", concentration: q(20, "mg/mL"), form: "frasco", volumeMl: 10 }],
+    routes: ["ocular"], indications: ["Glaucoma agudo de ângulo fechado (após início da queda da PIO)"], contraindications: ["Uveíte", "Concentração > 4%"], interactions: [],
+    onset: "30 min", duration: "4–6 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-WIKEM-GLAUCOMA-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "acetazolamida", name: "Acetazolamida", drugClass: "Inibidor da anidrase carbônica",
+    presentations: [{ id: "cp250", label: "Comprimido 250 mg", concentration: q(250, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Glaucoma agudo de ângulo fechado"], contraindications: ["Anemia falciforme", "Insuficiência renal grave", "Alergia a sulfonamidas (cautela)"], interactions: ["Hipocalemia, acidose metabólica"],
+    onset: "1 h (VO)", duration: "6–12 h",
+    doseRules: [r("acz-gaa", "todos", "Glaucoma agudo", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-WIKEM-GLAUCOMA-2026"], { notes: "500 mg VO (ou IV se náuseas)." })],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-WIKEM-GLAUCOMA-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "fluoxetina", name: "Fluoxetina", drugClass: "Antidepressivo ISRS",
     presentations: [{ id: "cp20", label: "Cápsula 20 mg", concentration: q(20, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["Episódio depressivo (com psicoterapia nos casos mais graves ou por preferência)"], contraindications: ["Uso de IMAO", "Episódio maníaco atual"], interactions: ["Serotoninérgicos (síndrome serotoninérgica)", "Inibição de CYP2D6"],

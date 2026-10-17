@@ -41,7 +41,8 @@ const ROUTE_DURATION: Record<string, number> = {
   inalatoria: 60,
   nebulizacao: 600,
   endotraqueal: 20,
-  SNG: 30
+  SNG: 30,
+  ocular: 15
 };
 
 // ---------------------------------------------------------------------------

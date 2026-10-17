@@ -196,7 +196,7 @@ export const ActionDefinitionSchema = z
   .strict();
 export type ActionDefinition = z.infer<typeof ActionDefinitionSchema>;
 
-export const RouteSchema = z.enum(["IV", "IM", "SC", "VO", "IO", "inalatoria", "SL", "retal", "IN", "nebulizacao", "endotraqueal", "SNG"]);
+export const RouteSchema = z.enum(["IV", "IM", "SC", "VO", "IO", "inalatoria", "SL", "retal", "IN", "nebulizacao", "endotraqueal", "SNG", "ocular"]);
 export type Route = z.infer<typeof RouteSchema>;
 
 export const DoseRuleSchema = z
