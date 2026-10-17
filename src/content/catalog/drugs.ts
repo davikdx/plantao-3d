@@ -307,6 +307,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["INT-WIKEM-LUDWIG"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "rivaroxabana", name: "Rivaroxabana", drugClass: "Anticoagulante oral (inibidor do fator Xa)",
+    presentations: [{ id: "cp15", label: "Comprimido 15 mg", concentration: q(15, "mg"), form: "comprimido" }, { id: "cp20", label: "Comprimido 20 mg", concentration: q(20, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["TVP/TEP — tratamento"], contraindications: ["Sangramento ativo", "ClCr < 30 mL/min", "Plaquetas < 50.000"], interactions: ["Inibidores/indutores fortes de CYP3A4 e P-gp"],
+    onset: "2–4 h", duration: "24 h",
+    doseRules: [r("riva-tvp", "adulto", "TVP — fase inicial", "VO", "bolus", q(15, "mg"), q(15, "mg"), ["INT-WIKEM-TVP-2026"], { frequency: "12/12 h por 21 dias, depois 20 mg/dia", notes: "Checar creatinina; evitar se ClCr < 30." })],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-WIKEM-TVP-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "cefalexina", name: "Cefalexina", drugClass: "Cefalosporina de 1ª geração",
+    presentations: [{ id: "cp500", label: "Cápsula 500 mg", concentration: q(500, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Celulite/erisipela não complicada"], contraindications: ["Alergia grave a betalactâmicos"], interactions: [],
+    onset: "—", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-IDSA-SSTI-2014"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "fluoxetina", name: "Fluoxetina", drugClass: "Antidepressivo ISRS",
     presentations: [{ id: "cp20", label: "Cápsula 20 mg", concentration: q(20, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["Episódio depressivo (com psicoterapia nos casos mais graves ou por preferência)"], contraindications: ["Uso de IMAO", "Episódio maníaco atual"], interactions: ["Serotoninérgicos (síndrome serotoninérgica)", "Inibição de CYP2D6"],
