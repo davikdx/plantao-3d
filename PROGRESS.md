@@ -13,10 +13,10 @@ Atualizado em 16/10/2026.
 - Ícones e splash próprios (tools/scripts/make_icons.py).
 
 ## Em andamento
-- Casos prontos: C001–C064, C073, C074, C076, C081, C083, C089, C091, C097, C105 (73 + T000); grupos Trauma, Endocrinologia e Nefrologia completos. Próximo: C065 (Gastroenterologia), depois C066–C072 e os demais grupos em ordem.
+- Casos prontos: C001–C074, C076, C081, C083, C089, C091, C097, C105 (81 + T000); grupos Trauma, Endocrinologia, Nefrologia e Gastroenterologia completos. Próximo: C075 (Obstetrícia/Ginecologia), depois C077–C080 e os demais grupos em ordem.
 
 ## Pendente
-1. 47 casos do catálogo (ver CASE_COVERAGE.md). Ao escrever, ampliar catálogos (ex.: antibióticos, anti-D, cloranfenicol, labetalol) com `validation: "pendente"`.
+1. 39 casos do catálogo (ver CASE_COVERAGE.md). Ao escrever, ampliar catálogos (ex.: antibióticos, anti-D, cloranfenicol, labetalol) com `validation: "pendente"`.
 2. Revisão clínica qualificada (nenhum caso revisado) e conferência das fontes "não acessado".
 3. Chave de release: gerar keystore e cadastrar os secrets PLANTAO_KEYSTORE_B64, PLANTAO_KEY_ALIAS, PLANTAO_KEYSTORE_PASSWORD, PLANTAO_KEY_PASSWORD (README).
 4. Teste em aparelho Android físico ou emulador (não executado).
