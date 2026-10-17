@@ -276,10 +276,10 @@ const drugsRaw: DrugDefinition[] = [
   },
   {
     id: "diazepam", name: "Diazepam", drugClass: "Benzodiazepínico",
-    presentations: [{ id: "amp10", label: "Ampola 5 mg/mL (2 mL)", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 2 }],
-    routes: ["IV", "retal"], indications: ["Crise convulsiva prolongada"], contraindications: ["Via IM (absorção errática)"], interactions: ["Depressão respiratória com outros depressores"],
+    presentations: [{ id: "amp10", label: "Ampola 5 mg/mL (2 mL)", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 2 }, { id: "cp10", label: "Comprimido 10 mg", concentration: q(10, "mg"), form: "comprimido" }],
+    routes: ["IV", "retal", "VO"], indications: ["Crise convulsiva prolongada", "Síndrome de abstinência alcoólica (primeira linha)"], contraindications: ["Via IM (absorção errática)"], interactions: ["Depressão respiratória com outros depressores"],
     onset: "1–3 min", duration: "Curta (redistribuição)",
-    doseRules: [r("dz-adulto", "adulto", "Estado de mal — 1ª fase", "IV", "bolus", q(0.15, "mg/kg"), q(0.2, "mg/kg"), ["INT-AES-2016"], { maxSingle: q(10, "mg") }), r("dz-gest", "gestante", "Crise convulsiva", "IV", "bolus", q(0.15, "mg/kg"), q(0.2, "mg/kg"), ["INT-AES-2016"], { maxSingle: q(10, "mg") }), r("dz-ped", "pediatrico", "Crise prolongada", "IV", "bolus", q(0.15, "mg/kg"), q(0.2, "mg/kg"), ["INT-AES-2016"], { maxSingle: q(10, "mg") })],
+    doseRules: [r("dz-abst-vo", "adulto", "Abstinência alcoólica (VO)", "VO", "bolus", q(10, "mg"), q(10, "mg"), ["BR-ABP-AGITACAO-2019", "INT-ASAM-AWS-2020"], { maxCumulative: q(60, "mg"), notes: "Máx. 60 mg/24 h (ABP); doses guiadas por sintomas (CIWA-Ar) ou frontloading conforme risco (ASAM)." }), r("dz-adulto", "adulto", "Estado de mal — 1ª fase", "IV", "bolus", q(0.15, "mg/kg"), q(0.2, "mg/kg"), ["INT-AES-2016"], { maxSingle: q(10, "mg") }), r("dz-gest", "gestante", "Crise convulsiva", "IV", "bolus", q(0.15, "mg/kg"), q(0.2, "mg/kg"), ["INT-AES-2016"], { maxSingle: q(10, "mg") }), r("dz-ped", "pediatrico", "Crise prolongada", "IV", "bolus", q(0.15, "mg/kg"), q(0.2, "mg/kg"), ["INT-AES-2016"], { maxSingle: q(10, "mg") })],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-AES-2016"], reviewedAt: REV, validation: "pendente"
   },
   {
