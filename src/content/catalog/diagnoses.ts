@@ -191,7 +191,25 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("lesao_esplenica_trauma", "Trauma abdominal fechado com lesão esplênica", "Trauma", ["lesão de baço"]),
   D("fratura_femur", "Fratura de fêmur", "Trauma"),
   D("hepatite_viral_aguda", "Hepatite viral aguda", "Gastroenterologia"),
-  D("trombose_venosa_profunda", "Trombose venosa profunda", "Outras urgências", ["TVP"])
+  D("trombose_venosa_profunda", "Trombose venosa profunda", "Outras urgências", ["TVP"]),
+  D("torcao_testicular", "Torção testicular", "Outras urgências", ["torção do cordão espermático"]),
+  D("epididimite", "Epididimite/orquiepididimite", "Outras urgências"),
+  D("torcao_apendice_testicular", "Torção do apêndice testicular", "Outras urgências"),
+  D("sindrome_cauda_equina", "Síndrome da cauda equina", "Outras urgências"),
+  D("lombalgia_mecanica", "Lombalgia mecânica/ciatalgia sem sinais de alarme", "Outras urgências"),
+  D("glaucoma_agudo", "Glaucoma agudo de ângulo fechado", "Outras urgências", ["crise de glaucoma"]),
+  D("oclusao_arteria_retina", "Oclusão da artéria central da retina", "Outras urgências"),
+  D("uveite_anterior", "Uveíte anterior aguda", "Outras urgências"),
+  D("epistaxe_posterior", "Epistaxe posterior/persistente com repercussão", "Outras urgências"),
+  D("epistaxe_anterior", "Epistaxe anterior simples", "Outras urgências"),
+  D("infeccao_odontogenica_grave", "Infecção odontogênica com disseminação para espaços cervicais profundos", "Outras urgências", ["angina de Ludwig", "abscesso cervical"]),
+  D("abscesso_dentario_localizado", "Abscesso dentário localizado", "Outras urgências"),
+  D("sjs_nets", "Síndrome de Stevens-Johnson/necrólise epidérmica tóxica", "Outras urgências", ["SSJ", "NET"]),
+  D("dress", "Reação a droga com eosinofilia e sintomas sistêmicos (DRESS)", "Outras urgências"),
+  D("exantema_viral", "Exantema viral", "Outras urgências"),
+  D("artrite_septica", "Artrite séptica", "Outras urgências"),
+  D("gota_aguda", "Crise aguda de gota", "Outras urgências"),
+  D("celulite_tvp_diferencial", "Celulite de membro inferior", "Outras urgências")
 ];
 
 export const DIAGNOSES_BY_ID = new Map(DIAGNOSES.map((d) => [d.id, d]));
