@@ -576,7 +576,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "amp100", label: "Ampola 100 mg/mL — conferir apresentação", concentration: q(100, "mg/mL"), form: "ampola", volumeMl: 1 }],
     routes: ["IV", "IM"], indications: ["Risco de encefalopatia de Wernicke (etilismo, desnutrição)"], contraindications: [], interactions: [],
     onset: "—", duration: "—",
-    doseRules: [r("tia-adulto", "adulto", "Prevenção/tratamento de Wernicke", "IV", "bolus", q(100, "mg"), q(500, "mg"), ["BR-SAMU-SAV"])],
+    doseRules: [r("tia-adulto", "adulto", "Prevenção/tratamento de Wernicke", "IV", "bolus", q(100, "mg"), q(500, "mg"), ["BR-SAMU-SAV", "INT-ECBC-ALCOOL-2024"], { notes: "Intoxicação alcoólica com risco nutricional: 100 mg antes da glicose, sem atrasar a glicose na hipoglicemia grave." })],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {

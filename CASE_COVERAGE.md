@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **92** (prioritários: 24/24)
+- Casos implementados e registrados: **98** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -98,13 +98,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C087 | Vômitos, dor abdominal e letargia em criança | sim | technicallyTested | 5 | hospital-regional |  |
 | C088 | Recém-nascido com icterícia e fator de risco | sim | technicallyTested | 5 | hospital-regional |  |
 | C089 | Ingestão excessiva de paracetamol | sim | technicallyTested | 5 | hospital-regional | sim |
-| C090 | Exposição a organofosforado | não | — | 0 | — |  |
+| C090 | Exposição a organofosforado | sim | technicallyTested | 5 | hospital-regional |  |
 | C091 | Rebaixamento e hipoventilação após opioide | sim | technicallyTested | 5 | samu-usa |  |
-| C092 | Dor torácica e agitação após estimulante | não | — | 0 | — |  |
-| C093 | Picada de escorpião em criança | não | — | 0 | — |  |
-| C094 | Acidente ofídico com alterações locais e sistêmicas | não | — | 0 | — |  |
-| C095 | Exposição a monóxido de carbono | não | — | 0 | — |  |
-| C096 | Intoxicação alcoólica com risco de aspiração | não | — | 0 | — |  |
+| C092 | Dor torácica e agitação após estimulante | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C093 | Picada de escorpião em criança | sim | technicallyTested | 5 | hospital-regional |  |
+| C094 | Acidente ofídico com alterações locais e sistêmicas | sim | technicallyTested | 5 | hospital-regional |  |
+| C095 | Exposição a monóxido de carbono | sim | technicallyTested | 5 | hospital-regional |  |
+| C096 | Intoxicação alcoólica com risco de aspiração | sim | technicallyTested | 5 | hospital-regional |  |
 | C097 | Ideação suicida com plano em contexto de crise | sim | technicallyTested | 5 | ubs-urbana | sim |
 | C098 | Agitação psicomotora com causa ainda desconhecida | não | — | 0 | — |  |
 | C099 | Primeiro episódio psicótico | não | — | 0 | — |  |
