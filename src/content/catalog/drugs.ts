@@ -732,6 +732,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["INT-KDIGO-ANEMIA-2026"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "metronidazol", name: "Metronidazol", drugClass: "Nitroimidazólico (anaerobicida)",
+    presentations: [{ id: "bolsa500", label: "Bolsa 500 mg/100 mL", concentration: q(5, "mg/mL"), form: "bolsa", volumeMl: 100 }],
+    routes: ["IV"], indications: ["Cobertura de anaeróbios em infecção intra-abdominal (associado)", "C. difficile fulminante (IV, associado à vancomicina oral)"], contraindications: ["Hipersensibilidade"], interactions: ["Efeito dissulfiram com álcool", "Varfarina"],
+    onset: "—", duration: "8 h",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-IDSA-CDI-2021"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "albumina", name: "Albumina humana 20%", drugClass: "Coloide (hemoderivado)",
+    presentations: [{ id: "fr50", label: "Frasco 20% — 10 g/50 mL", concentration: q(200, "mg/mL"), form: "frasco", volumeMl: 50 }],
+    routes: ["IV"], indications: ["Peritonite bacteriana espontânea (com antibiótico)", "Paracentese de grande volume", "Síndrome hepatorrenal (com vasoconstritor)"], contraindications: ["Congestão/sobrecarga volêmica"], interactions: [],
+    onset: "Imediato", duration: "—",
+    doseRules: [r("alb-pbe", "adulto", "Peritonite bacteriana espontânea — dia 1", "IV", "infusao_volume", q(1.5, "g/kg"), q(1.5, "g/kg"), ["INT-PBE-CMAJ-2023"], { notes: "1,5 g/kg em até 6 h do diagnóstico; 1 g/kg no dia 3." }), r("alb-pbe-idoso", "idoso", "Peritonite bacteriana espontânea — dia 1", "IV", "infusao_volume", q(1.5, "g/kg"), q(1.5, "g/kg"), ["INT-PBE-CMAJ-2023"])],
+    availability: ["hemocomponentes"], sourceIds: ["INT-PBE-CMAJ-2023", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
@@ -743,10 +759,10 @@ const drugsRaw: DrugDefinition[] = [
   {
     id: "vancomicina", name: "Vancomicina", drugClass: "Glicopeptídeo",
     presentations: [{ id: "fa500", label: "Frasco-ampola 500 mg (diluir; infusão lenta)", concentration: q(50, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }, { id: "fa1g", label: "Frasco-ampola 1 g (diluir; infusão lenta)", concentration: q(50, "mg/mL"), form: "frasco_ampola", volumeMl: 20 }],
-    routes: ["IV"], indications: ["Cobertura de MRSA em infecção grave de pele/partes moles e outras infecções graves"], contraindications: [], interactions: ["Nefrotoxicidade aditiva (aminoglicosídeos, piperacilina-tazobactam)", "Reação infusional se infundida rápido"],
+    routes: ["IV", "VO"], indications: ["Cobertura de MRSA em infecção grave de pele/partes moles e outras infecções graves", "Via oral (pó do frasco-ampola diluído): colite por Clostridioides difficile"], contraindications: [], interactions: ["Nefrotoxicidade aditiva (aminoglicosídeos, piperacilina-tazobactam)", "Reação infusional se infundida rápido"],
     onset: "—", duration: "8–12 h (função renal)",
     renalHepatic: "Ajuste renal e monitorização de nível sérico",
-    doseRules: [r("vanco-adulto", "adulto", "Infecção grave de partes moles (MRSA)", "IV", "bolus", q(15, "mg/kg"), q(20, "mg/kg"), ["INT-IDSA-SSTI-2014"], { notes: "30 mg/kg/dia em 2 doses (IDSA, Tabela 2); dose de ataque e intervalo conforme protocolo e função renal." }), r("vanco-idoso", "idoso", "Infecção grave de partes moles (MRSA)", "IV", "bolus", q(15, "mg/kg"), q(20, "mg/kg"), ["INT-IDSA-SSTI-2014"])],
+    doseRules: [r("vanco-adulto", "adulto", "Infecção grave de partes moles (MRSA)", "IV", "bolus", q(15, "mg/kg"), q(20, "mg/kg"), ["INT-IDSA-SSTI-2014"], { notes: "30 mg/kg/dia em 2 doses (IDSA, Tabela 2); dose de ataque e intervalo conforme protocolo e função renal." }), r("vanco-idoso", "idoso", "Infecção grave de partes moles (MRSA)", "IV", "bolus", q(15, "mg/kg"), q(20, "mg/kg"), ["INT-IDSA-SSTI-2014"]), r("vanco-cdi-fulm", "adulto", "C. difficile fulminante", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-IDSA-CDI-2021"], { frequency: "6/6 h, associada a metronidazol IV" }), r("vanco-cdi-fulm-idoso", "idoso", "C. difficile fulminante", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-IDSA-CDI-2021"], { frequency: "6/6 h, associada a metronidazol IV" })],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-IDSA-SSTI-2014"], reviewedAt: REV, validation: "pendente"
   },
   {

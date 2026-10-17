@@ -101,6 +101,13 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("hipocalcemia", "Hipocalcemia", "Nefrologia e eletrólitos"),
   // Gastro
   D("apendicite", "Apendicite aguda", "Gastroenterologia"),
+  D("apendicite_complicada", "Apendicite aguda complicada (perfurada/abscesso)", "Abdome agudo", ["apendicite perfurada"]),
+  D("colangite", "Colangite aguda", "Abdome agudo", ["colangite"]),
+  D("obstrucao_intestinal", "Obstrução intestinal (bridas)", "Abdome agudo", ["suboclusão", "abdome agudo obstrutivo"]),
+  D("isquemia_mesenterica", "Isquemia mesentérica aguda", "Abdome agudo"),
+  D("pbe", "Peritonite bacteriana espontânea", "Hepatologia", ["PBE"]),
+  D("hda_varicosa", "Hemorragia digestiva alta varicosa", "Hepatologia", ["varizes de esôfago"]),
+  D("colite_cdiff", "Colite por Clostridioides difficile", "Gastroenterologia", ["C. difficile"]),
   D("hda", "Hemorragia digestiva alta", "Gastroenterologia"),
   D("pancreatite", "Pancreatite aguda", "Gastroenterologia"),
   D("colecistite", "Colecistite aguda", "Gastroenterologia"),
