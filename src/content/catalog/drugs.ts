@@ -444,11 +444,27 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "nitrofurantoina", name: "Nitrofurantoína", drugClass: "Antibacteriano urinário",
+    presentations: [{ id: "cp100", label: "Cápsula 100 mg", concentration: q(100, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Cistite não complicada (primeira linha)"], contraindications: ["Pielonefrite/ITU complicada (níveis teciduais renais baixos)", "ClCr < 30 mL/min"], interactions: [],
+    onset: "—", duration: "—",
+    doseRules: [r("nitro-cist", "adulto", "Cistite não complicada", "VO", "bolus", q(100, "mg"), q(100, "mg"), ["INT-WPHC-ITU-2025"], { frequency: "12/12 h por 5 dias" })],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-WPHC-ITU-2025", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "ciprofloxacino", name: "Ciprofloxacino", drugClass: "Fluoroquinolona",
+    presentations: [{ id: "cp500", label: "Comprimido 500 mg", concentration: q(500, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Pielonefrite leve a moderada (se SMX-TMP não puder ser usado; conforme sensibilidade local)"], contraindications: ["Gestação", "Miastenia gravis"], interactions: ["Prolonga QT", "Tendinopatia"],
+    onset: "—", duration: "—",
+    doseRules: [r("cipro-pna", "adulto", "Pielonefrite leve a moderada", "VO", "bolus", q(500, "mg"), q(500, "mg"), ["INT-WPHC-ITU-2025"], { frequency: "12/12 h por 7 dias" })],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-WPHC-ITU-2025"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "smx_tmp", name: "Sulfametoxazol + trimetoprima", drugClass: "Sulfonamida + inibidor da di-hidrofolato redutase",
     presentations: [{ id: "amp400", label: "Ampola 400 mg + 80 mg (5 mL) — dose expressa pelo componente trimetoprima: 80 mg", concentration: q(16, "mg/mL"), form: "ampola", volumeMl: 5 }, { id: "cp800", label: "Comprimido 800 mg + 160 mg (dose pela trimetoprima: 160 mg)", concentration: q(160, "mg"), form: "comprimido" }],
-    routes: ["IV", "VO"], indications: ["Pneumocistose (dose pelo componente trimetoprima)"], contraindications: ["Alergia a sulfa", "Deficiência de G6PD (cautela)"], interactions: ["Hipercalemia, mielotoxicidade"],
+    routes: ["IV", "VO"], indications: ["Pneumocistose (dose pelo componente trimetoprima)", "Pielonefrite leve a moderada (conforme sensibilidade local)"], contraindications: ["Alergia a sulfa", "Deficiência de G6PD (cautela)"], interactions: ["Hipercalemia, mielotoxicidade"],
     onset: "—", duration: "—",
-    doseRules: [r("smx-pcp", "adulto", "Pneumocistose", "IV", "bolus", q(3.75, "mg/kg"), q(5, "mg/kg"), ["BR-PCDT-HIV"], { frequency: "6/6 h ou 8/8 h (TMP 15–20 mg/kg/dia; conferir)", notes: "Dose expressa pelo componente trimetoprima." }), r("smx-pcp-vo", "adulto", "Pneumocistose", "VO", "bolus", q(3.75, "mg/kg"), q(5, "mg/kg"), ["BR-PCDT-HIV"])],
+    doseRules: [r("smx-pna", "adulto", "Pielonefrite leve a moderada (VO)", "VO", "bolus", q(160, "mg"), q(160, "mg"), ["INT-WPHC-ITU-2025"], { frequency: "12/12 h por 7 dias", notes: "1 comprimido 800/160 (dose pelo componente trimetoprima); adaptar ao antibiograma local." }), r("smx-pcp", "adulto", "Pneumocistose", "IV", "bolus", q(3.75, "mg/kg"), q(5, "mg/kg"), ["BR-PCDT-HIV"], { frequency: "6/6 h ou 8/8 h (TMP 15–20 mg/kg/dia; conferir)", notes: "Dose expressa pelo componente trimetoprima." }), r("smx-pcp-vo", "adulto", "Pneumocistose", "VO", "bolus", q(3.75, "mg/kg"), q(5, "mg/kg"), ["BR-PCDT-HIV"])],
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-PCDT-HIV"], reviewedAt: REV, validation: "pendente"
   },
   {
