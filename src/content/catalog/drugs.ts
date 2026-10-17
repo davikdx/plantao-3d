@@ -279,7 +279,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "cp100", label: "Comprimido 100 mg", concentration: q(100, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["Síndrome coronariana aguda"], contraindications: ["Alergia a AAS", "Sangramento ativo"], interactions: [],
     onset: "Minutos (mastigado)", duration: "Vida da plaqueta",
-    doseRules: [r("aas-sca", "adulto", "SCA — ataque", "VO", "bolus", q(150, "mg"), q(325, "mg"), ["INT-ESC-SCA-2023"], { notes: "Faixa de ataque a conferir na diretriz; mastigar." }), r("aas-sca-idoso", "idoso", "SCA — ataque", "VO", "bolus", q(150, "mg"), q(325, "mg"), ["INT-ESC-SCA-2023"])],
+    doseRules: [r("aas-sca", "adulto", "SCA — ataque", "VO", "bolus", q(150, "mg"), q(325, "mg"), ["INT-ESC-SCA-2023"], { notes: "Faixa de ataque a conferir na diretriz; mastigar." }), r("aas-sca-idoso", "idoso", "SCA — ataque", "VO", "bolus", q(150, "mg"), q(325, "mg"), ["INT-ESC-SCA-2023"]), r("aas-pe", "gestante", "Prevenção de pré-eclâmpsia", "VO", "bolus", q(100, "mg"), q(150, "mg"), ["BR-FEBRASGO-PE-2019"], { frequency: "1x/dia à noite, idealmente antes de 16 semanas até 36 semanas" })],
     availability: ["medicacoes_basicas"], sourceIds: ["BR-ANVISA", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
   },
   {
@@ -762,6 +762,22 @@ const drugsRaw: DrugDefinition[] = [
     onset: "24–48 h (efeito fetal)", duration: "—",
     doseRules: [],
     availability: ["obstetricia"], sourceIds: ["BR-MEUFRJ-PP", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "metildopa", name: "Metildopa", drugClass: "Agonista alfa-2 central",
+    presentations: [{ id: "cp250", label: "Comprimido 250 mg", concentration: q(250, "mg"), form: "comprimido" }, { id: "cp500", label: "Comprimido 500 mg", concentration: q(500, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Hipertensão na gestação (uso ambulatorial)"], contraindications: ["Hepatopatia ativa", "Depressão grave"], interactions: [],
+    onset: "Horas", duration: "12–24 h",
+    doseRules: [r("mdopa-gest", "gestante", "Hipertensão na gestação", "VO", "bolus", q(250, "mg"), q(1000, "mg"), ["BR-FEBRASGO-PE-2019"], { frequency: "2–4×/dia; total 750–2.000 mg/dia", notes: "Faixa por tomada derivada da faixa diária publicada." })],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-FEBRASGO-PE-2019", "BR-RENAME"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "carbonato_calcio", name: "Carbonato de cálcio", drugClass: "Suplemento de cálcio",
+    presentations: [{ id: "cp500", label: "Comprimido 500 mg de cálcio elementar — conferir apresentação", concentration: q(500, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Prevenção de pré-eclâmpsia em gestante de risco e/ou com baixa ingestão de cálcio"], contraindications: ["Hipercalcemia"], interactions: ["Reduz absorção de ferro (separar horários)"],
+    onset: "—", duration: "—",
+    doseRules: [r("ca-gest", "gestante", "Prevenção de pré-eclâmpsia", "VO", "bolus", q(500, "mg"), q(1000, "mg"), ["BR-FEBRASGO-PE-2019"], { frequency: "1,0–2,0 g/dia em 2–3 tomadas" })],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-FEBRASGO-PE-2019"], reviewedAt: REV, validation: "pendente"
   },
   {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",

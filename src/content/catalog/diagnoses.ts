@@ -116,6 +116,7 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("abortamento", "Abortamento", "Obstetrícia e ginecologia"),
   D("pre_eclampsia_grave", "Pré-eclâmpsia com sinais de gravidade", "Obstetrícia e ginecologia", ["pré-eclâmpsia grave", "DHEG grave"]),
   D("eclampsia", "Eclâmpsia", "Obstetrícia e ginecologia"),
+  D("gestacao_alto_risco", "Gestação de alto risco (hipertensão crônica, pré-eclâmpsia prévia)", "Obstetrícia e ginecologia", ["pré-natal de alto risco"]),
   D("placenta_previa", "Placenta prévia com sangramento", "Obstetrícia e ginecologia"),
   D("dpp", "Descolamento prematuro de placenta", "Obstetrícia e ginecologia", ["DPP"]),
   D("hipertensao_gestacional", "Hipertensão gestacional sem sinais de gravidade", "Obstetrícia e ginecologia"),

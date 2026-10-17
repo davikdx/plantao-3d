@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **81** (prioritários: 24/24)
+- Casos implementados e registrados: **86** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -83,12 +83,12 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C072 | Diarreia com desidratação e fatores de risco | sim | technicallyTested | 5 | hospital-regional |  |
 | C073 | Dor e sangramento no início da gestação | sim | technicallyTested | 5 | hospital-regional | sim |
 | C074 | Hipertensão e sintomas neurológicos na gestação | sim | technicallyTested | 5 | hospital-regional | sim |
-| C075 | Convulsão em gestante | não | — | 0 | — |  |
+| C075 | Convulsão em gestante | sim | technicallyTested | 5 | hospital-regional |  |
 | C076 | Sangramento após parto | sim | technicallyTested | 5 | hospital-regional | sim |
-| C077 | Sangramento no terceiro trimestre | não | — | 0 | — |  |
-| C078 | Dor pélvica, febre e corrimento | não | — | 0 | — |  |
-| C079 | Dor pélvica súbita com náuseas | não | — | 0 | — |  |
-| C080 | Consulta pré-natal com fator de risco identificado | não | — | 0 | — |  |
+| C077 | Sangramento no terceiro trimestre | sim | technicallyTested | 5 | hospital-regional |  |
+| C078 | Dor pélvica, febre e corrimento | sim | technicallyTested | 5 | ubs-urbana |  |
+| C079 | Dor pélvica súbita com náuseas | sim | technicallyTested | 5 | hospital-regional |  |
+| C080 | Consulta pré-natal com fator de risco identificado | sim | technicallyTested | 5 | ubs-urbana |  |
 | C081 | Lactente com esforço respiratório e dificuldade de alimentação | sim | technicallyTested | 5 | upa-porte-ii | sim |
 | C082 | Criança com sibilância intensa | não | — | 0 | — |  |
 | C083 | Diarreia em criança com desidratação | sim | technicallyTested | 5 | upa-porte-ii | sim |
