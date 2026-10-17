@@ -596,6 +596,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["soroterapia_antiveneno"], sourceIds: ["BR-ESCORPIAO", "BR-BUTANTAN-SAESC"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "soro_antibotropico", name: "Soro antibotrópico (pentavalente, SAB)", drugClass: "Imunobiológico (antiveneno heterólogo)",
+    presentations: [{ id: "fa10", label: "Frasco-ampola 10 mL (≥ 5 mg de veneno de B. jararaca neutralizado/mL)", concentration: q(1, "mg/mL"), form: "ampola", volumeMl: 10 }],
+    routes: ["IV"], indications: ["Acidente botrópico: leve 3, moderado 6, grave 12 frascos-ampola (conferir PCDT)"], contraindications: [], interactions: ["Reações de hipersensibilidade: aplicar em serviço preparado para anafilaxia"],
+    onset: "Minutos", duration: "—",
+    doseRules: [r("sab-leve", "todos", "Botrópico leve — 3 FA", "IV", "bolus", q(30, "mL"), q(30, "mL"), ["BR-OFIDICO", "BR-BUTANTAN-SAB"], { notes: "Mesma dose para adultos e crianças; diluir em SF/SG5% e infundir 8–12 mL/min; não fracionar." }), r("sab-mod", "todos", "Botrópico moderado — 6 FA", "IV", "bolus", q(60, "mL"), q(60, "mL"), ["BR-OFIDICO", "BR-BUTANTAN-SAB"], { notes: "Infundir 8–12 mL/min; cuidado com sobrecarga." }), r("sab-grave", "todos", "Botrópico grave — 12 FA", "IV", "bolus", q(120, "mL"), q(120, "mL"), ["BR-OFIDICO", "BR-BUTANTAN-SAB"], { notes: "Infundir 8–12 mL/min." })],
+    availability: ["soroterapia_antiveneno"], sourceIds: ["BR-OFIDICO", "BR-BUTANTAN-SAB"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "lidocaina", name: "Lidocaína 2% sem vasoconstritor", drugClass: "Anestésico local",
     presentations: [{ id: "fa20", label: "Frasco 20 mg/mL (20 mL), sem vasoconstritor", concentration: q(20, "mg/mL"), form: "ampola", volumeMl: 20 }],
     routes: ["SC"], indications: ["Infiltração local para dor intensa (ex.: picada de escorpião)"], contraindications: ["Alergia a anestésicos amida"], interactions: [],
