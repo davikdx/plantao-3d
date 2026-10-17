@@ -259,6 +259,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["BR-ABP-AGITACAO-2019", "INT-AGS-BEERS-2023"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "anticoncepcional_combinado", name: "Etinilestradiol + levonorgestrel (anticoncepcional oral combinado)", drugClass: "Contraceptivo hormonal combinado",
+    presentations: [{ id: "cart21", label: "Cartela 0,03 mg + 0,15 mg (21 comprimidos)", concentration: q(1, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Contracepção (avaliar critérios de elegibilidade)"], contraindications: ["Enxaqueca com aura (MEC 4)", "≥ 35 anos e ≥ 15 cigarros/dia (MEC 4)", "PA ≥ 160/100, TEV, cardiopatia isquêmica/AVC, pós-parto < 21 dias (MEC 4)"], interactions: ["Indutores enzimáticos"],
+    onset: "—", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-USMEC-2024"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "desogestrel", name: "Desogestrel (pílula só de progestagênio)", drugClass: "Contraceptivo só de progestagênio",
+    presentations: [{ id: "cart28", label: "Cartela 75 microgramas (28 comprimidos)", concentration: q(1, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Contracepção quando estrogênio é contraindicado"], contraindications: ["Câncer de mama atual"], interactions: ["Indutores enzimáticos"],
+    onset: "—", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-USMEC-2024"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "fluoxetina", name: "Fluoxetina", drugClass: "Antidepressivo ISRS",
     presentations: [{ id: "cp20", label: "Cápsula 20 mg", concentration: q(20, "mg"), form: "comprimido" }],
     routes: ["VO"], indications: ["Episódio depressivo (com psicoterapia nos casos mais graves ou por preferência)"], contraindications: ["Uso de IMAO", "Episódio maníaco atual"], interactions: ["Serotoninérgicos (síndrome serotoninérgica)", "Inibição de CYP2D6"],

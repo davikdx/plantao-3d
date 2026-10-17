@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **105** (prioritários: 24/24)
+- Casos implementados e registrados: **112** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -114,13 +114,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C103 | Alteração aguda e flutuante da atenção no idoso | sim | technicallyTested | 5 | hospital-regional |  |
 | C104 | Febre e rigidez em usuário de psicofármaco | sim | technicallyTested | 5 | hospital-regional |  |
 | C105 | Hipertensão persistente em seguimento | sim | technicallyTested | 5 | ubs-urbana | sim |
-| C106 | Pressão elevada com sintomas de possível lesão aguda | não | — | 0 | — |  |
-| C107 | Diabetes fora da meta com esquema inadequado | não | — | 0 | — |  |
-| C108 | Polifarmácia, quedas e sintomas inespecíficos no idoso | não | — | 0 | — |  |
-| C109 | Asma com uso frequente de alívio em consulta | não | — | 0 | — |  |
-| C110 | Sintomas depressivos em consulta de UBS | não | — | 0 | — |  |
-| C111 | Sintomas urinários e dúvida sobre local de infecção | não | — | 0 | — |  |
-| C112 | Escolha de contracepção com comorbidades | não | — | 0 | — |  |
+| C106 | Pressão elevada com sintomas de possível lesão aguda | sim | technicallyTested | 5 | ubs-urbana |  |
+| C107 | Diabetes fora da meta com esquema inadequado | sim | technicallyTested | 5 | ubs-urbana |  |
+| C108 | Polifarmácia, quedas e sintomas inespecíficos no idoso | sim | technicallyTested | 5 | ubs-urbana |  |
+| C109 | Asma com uso frequente de alívio em consulta | sim | technicallyTested | 5 | ubs-urbana |  |
+| C110 | Sintomas depressivos em consulta de UBS | sim | technicallyTested | 5 | ubs-urbana |  |
+| C111 | Sintomas urinários e dúvida sobre local de infecção | sim | technicallyTested | 5 | ubs-urbana |  |
+| C112 | Escolha de contracepção com comorbidades | sim | technicallyTested | 5 | ubs-urbana |  |
 | C113 | Dor testicular de início súbito | não | — | 0 | — |  |
 | C114 | Dor lombar, retenção e alteração neurológica | não | — | 0 | — |  |
 | C115 | Dor ocular e perda visual aguda | não | — | 0 | — |  |
