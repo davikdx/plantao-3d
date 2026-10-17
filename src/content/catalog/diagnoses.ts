@@ -156,6 +156,11 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("intox_medicamentosa_intencional", "Intoxicação medicamentosa intencional", "Psiquiatria"),
   D("crise_ansiedade", "Crise de ansiedade / ataque de pânico", "Psiquiatria"),
   D("delirium", "Delirium", "Psiquiatria"),
+  D("primeiro_episodio_psicotico", "Primeiro episódio psicótico", "Psiquiatria", ["psicose de primeiro episódio"]),
+  D("episodio_maniaco", "Episódio maníaco (transtorno bipolar)", "Psiquiatria", ["mania"]),
+  D("sindrome_neuroleptica_maligna", "Síndrome neuroléptica maligna", "Psiquiatria", ["SNM"]),
+  D("sindrome_serotoninergica", "Síndrome serotoninérgica", "Psiquiatria"),
+  D("agitacao_psicotica", "Agitação psicótica (transtorno psicótico conhecido)", "Psiquiatria"),
   D("abstinencia_alcool", "Síndrome de abstinência alcoólica", "Psiquiatria"),
   // APS
   D("has_nao_controlada", "Hipertensão arterial não controlada", "Atenção primária", ["HAS descontrolada"]),

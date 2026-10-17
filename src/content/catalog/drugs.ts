@@ -235,11 +235,19 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "BR-GESTACAO"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "haloperidol", name: "Haloperidol", drugClass: "Antipsicótico típico (butirofenona)",
+    presentations: [{ id: "amp5", label: "Ampola 5 mg/mL (1 mL)", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 1 }],
+    routes: ["IM"], indications: ["Agitação psicótica (isolado ou com prometazina/midazolam)", "Agitação na intoxicação alcoólica (menor depressão respiratória)"], contraindications: ["Parkinsonismo/demência com corpos de Lewy", "QT longo"], interactions: ["Prolonga QT; sintomas extrapiramidais"],
+    onset: "15–30 min (IM)", duration: "4–8 h",
+    doseRules: [r("hal-agit", "adulto", "Agitação psicótica", "IM", "bolus", q(2.5, "mg"), q(10, "mg"), ["BR-ABP-AGITACAO-2019"], { maxCumulative: q(30, "mg"), frequency: "repetir a cada ~30 min se necessário", notes: "Máximo 30 mg/24 h; com midazolam usar 2,5 mg." })],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ABP-AGITACAO-2019", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "prometazina", name: "Prometazina", drugClass: "Anti-histamínico H1",
     presentations: [{ id: "amp25", label: "Ampola 25 mg/mL (2 mL)", concentration: q(25, "mg/mL"), form: "ampola", volumeMl: 2 }],
-    routes: ["IM"], indications: ["Sintomas cutâneos de reação alérgica (adjuvante; não trata choque/broncoespasmo)"], contraindications: ["Menores de 2 anos"], interactions: ["Sedação aditiva"],
+    routes: ["IM"], indications: ["Sintomas cutâneos de reação alérgica (adjuvante; não trata choque/broncoespasmo)", "Agitação psicótica, associada ao haloperidol IM"], contraindications: ["Menores de 2 anos"], interactions: ["Sedação aditiva"],
     onset: "20 min", duration: "4–6 h",
-    doseRules: [r("prom-adulto", "adulto", "Adjuvante em reação alérgica", "IM", "bolus", q(25, "mg"), q(50, "mg"), ["BR-SAMU-SAV"])],
+    doseRules: [r("prom-adulto", "adulto", "Adjuvante em reação alérgica", "IM", "bolus", q(25, "mg"), q(50, "mg"), ["BR-SAMU-SAV"]), r("prom-agit", "adulto", "Agitação psicótica (com haloperidol)", "IM", "bolus", q(25, "mg"), q(50, "mg"), ["BR-ABP-AGITACAO-2019"], { maxCumulative: q(100, "mg"), notes: "Máximo 100 mg/24 h na associação." })],
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
@@ -263,7 +271,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "amp15", label: "Ampola 5 mg/mL (3 mL)", concentration: q(5, "mg/mL"), form: "ampola", volumeMl: 3 }],
     routes: ["IM", "IV", "IN"], indications: ["Crise convulsiva prolongada (IM sem acesso)", "Sedação"], contraindications: [], interactions: ["Depressão respiratória"],
     onset: "IM 5 min", duration: "1–2 h",
-    doseRules: [r("mdz-im", "adulto", "Estado de mal — 1ª fase", "IM", "bolus", q(10, "mg"), q(10, "mg"), ["INT-AES-2016"], { notes: "Adulto > 40 kg." }), r("mdz-im-ped", "pediatrico", "Crise prolongada", "IM", "bolus", q(5, "mg"), q(10, "mg"), ["INT-AES-2016"], { notes: "5 mg para 13–40 kg; 10 mg > 40 kg." })],
+    doseRules: [r("mdz-agit", "adulto", "Agitação (monoterapia ou com haloperidol 2,5 mg)", "IM", "bolus", q(7.5, "mg"), q(15, "mg"), ["BR-ABP-AGITACAO-2019"], { notes: "Evitar com olanzapina IM; evitar em intoxicação por depressores e no delirium." }), r("mdz-im", "adulto", "Estado de mal — 1ª fase", "IM", "bolus", q(10, "mg"), q(10, "mg"), ["INT-AES-2016"], { notes: "Adulto > 40 kg." }), r("mdz-im-ped", "pediatrico", "Crise prolongada", "IM", "bolus", q(5, "mg"), q(10, "mg"), ["INT-AES-2016"], { notes: "5 mg para 13–40 kg; 10 mg > 40 kg." })],
     availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA", "INT-AES-2016"], reviewedAt: REV, validation: "pendente"
   },
   {
