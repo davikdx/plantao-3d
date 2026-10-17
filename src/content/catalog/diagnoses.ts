@@ -144,6 +144,11 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("intox_alcool", "Intoxicação alcoólica aguda", "Toxicologia"),
   D("intox_co", "Intoxicação por monóxido de carbono", "Toxicologia"),
   D("intox_estimulante", "Intoxicação por estimulante (cocaína/anfetamina)", "Toxicologia"),
+  D("escorpionismo_moderado", "Acidente escorpiônico moderado", "Toxicologia", ["escorpionismo moderado"]),
+  D("escorpionismo_grave", "Acidente escorpiônico grave", "Toxicologia", ["escorpionismo grave"]),
+  D("escorpionismo_leve", "Acidente escorpiônico leve", "Toxicologia"),
+  D("acidente_botropico", "Acidente botrópico (jararaca)", "Toxicologia", ["botrópico"]),
+  D("acidente_crotalico", "Acidente crotálico (cascavel)", "Toxicologia", ["crotálico"]),
   // Psiquiatria
   D("risco_suicidio_alto", "Ideação suicida com plano — risco elevado", "Psiquiatria", ["risco de suicídio"]),
   D("episodio_depressivo", "Episódio depressivo", "Psiquiatria", ["depressão"]),

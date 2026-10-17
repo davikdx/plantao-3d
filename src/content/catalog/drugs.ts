@@ -588,6 +588,22 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["sala_vacina", "imunobiologicos_especiais"], sourceIds: ["BR-RAIVA-TETANO-RJ"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "soro_antiescorpionico", name: "Soro antiescorpiônico (SAEsc)", drugClass: "Imunobiológico (antiveneno heterólogo)",
+    presentations: [{ id: "fa5", label: "Frasco-ampola 5 mL (≥ 1 mg de veneno de T. serrulatus neutralizado/mL)", concentration: q(1, "mg/mL"), form: "ampola", volumeMl: 5 }],
+    routes: ["IV"], indications: ["Escorpionismo moderado (3 frascos-ampola) ou grave (6 frascos-ampola)"], contraindications: [], interactions: ["Reações de hipersensibilidade: aplicar em serviço preparado para anafilaxia"],
+    onset: "Minutos", duration: "—",
+    doseRules: [r("saesc-mod", "todos", "Escorpionismo moderado — 3 frascos-ampola", "IV", "bolus", q(15, "mL"), q(15, "mL"), ["BR-ESCORPIAO", "BR-BUTANTAN-SAESC"], { notes: "3 FA × 5 mL. Velocidade/diluição: conferir bula." }), r("saesc-grave", "todos", "Escorpionismo grave — 6 frascos-ampola", "IV", "bolus", q(30, "mL"), q(30, "mL"), ["BR-ESCORPIAO", "BR-BUTANTAN-SAESC"], { notes: "6 FA × 5 mL; não exceder 6 FA." })],
+    availability: ["soroterapia_antiveneno"], sourceIds: ["BR-ESCORPIAO", "BR-BUTANTAN-SAESC"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "lidocaina", name: "Lidocaína 2% sem vasoconstritor", drugClass: "Anestésico local",
+    presentations: [{ id: "fa20", label: "Frasco 20 mg/mL (20 mL), sem vasoconstritor", concentration: q(20, "mg/mL"), form: "ampola", volumeMl: 20 }],
+    routes: ["SC"], indications: ["Infiltração local para dor intensa (ex.: picada de escorpião)"], contraindications: ["Alergia a anestésicos amida"], interactions: [],
+    onset: "Minutos", duration: "1–2 h",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-ESCORPIAO"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "soro_antirrabico", name: "Soro antirrábico humano (heterólogo, SARH)", drugClass: "Imunobiológico (imunização passiva)",
     presentations: [{ id: "amp1000", label: "Ampola 200 UI/mL (5 mL) — conferir apresentação", concentration: q(200, "UI/mL"), form: "ampola", volumeMl: 5 }],
     routes: ["IM"], indications: ["Lesão grave por animal não observável ou com suspeita de raiva (D0, junto à 1ª dose da vacina)"], contraindications: [], interactions: ["Reações de hipersensibilidade: aplicar em serviço preparado para anafilaxia"],
