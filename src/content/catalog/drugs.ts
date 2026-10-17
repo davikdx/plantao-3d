@@ -227,7 +227,7 @@ const drugsRaw: DrugDefinition[] = [
     presentations: [{ id: "amp50", label: "Ampola 50% 10 mL (500 mg/mL)", concentration: q(500, "mg/mL"), form: "ampola", volumeMl: 10 }, { id: "amp10", label: "Ampola 10% 10 mL (100 mg/mL)", concentration: q(100, "mg/mL"), form: "ampola", volumeMl: 10 }],
     routes: ["IV", "IM"], indications: ["Pré-eclâmpsia grave/eclâmpsia", "Crise de asma grave refratária"], contraindications: ["Miastenia gravis", "Insuficiência renal (ajustar/monitorar)"], interactions: ["Potencializa bloqueadores neuromusculares"],
     onset: "Imediato (IV)", duration: "Enquanto infundido",
-    doseRules: [
+    doseRules: [r("mg-ped-asma", "pediatrico", "Asma grave refratária", "IV", "infusao_volume", q(40, "mg/kg"), q(50, "mg/kg"), ["INT-TREKK-ASMA-2024"], { maxSingle: q(2000, "mg"), notes: "Em ≥ 20 min." }), 
       r("mg-ataque-gest", "gestante", "Pré-eclâmpsia grave — ataque", "IV", "infusao_volume", q(4000, "mg"), q(6000, "mg"), ["BR-GESTACAO"], { notes: "Ataque em 10–20 min (a conferir); monitorar reflexos, FR e diurese." }),
       r("mg-manut-gest", "gestante", "Pré-eclâmpsia grave — manutenção", "IV", "infusao", q(1000, "mg/h"), q(2000, "mg/h"), ["BR-GESTACAO"]),
       r("mg-asma", "adulto", "Asma grave", "IV", "infusao_volume", q(2000, "mg"), q(2000, "mg"), ["INT-GINA"], { notes: "Em 20 min; dose a conferir." })
@@ -397,8 +397,8 @@ const drugsRaw: DrugDefinition[] = [
   },
   {
     id: "dexametasona", name: "Dexametasona", drugClass: "Corticosteroide",
-    presentations: [{ id: "amp10", label: "Ampola 4 mg/mL (2,5 mL = 10 mg)", concentration: q(4, "mg/mL"), form: "ampola", volumeMl: 2.5 }],
-    routes: ["IV", "IM"], indications: ["Meningite bacteriana suspeita (antes ou junto da 1ª dose do antibiótico)", "Edema vasogênico", "Crupe"], contraindications: [], interactions: [],
+    presentations: [{ id: "amp10", label: "Ampola 4 mg/mL (2,5 mL = 10 mg)", concentration: q(4, "mg/mL"), form: "ampola", volumeMl: 2.5 }, { id: "elixir", label: "Elixir 0,1 mg/mL", concentration: q(0.1, "mg/mL"), form: "frasco" }],
+    routes: ["IV", "IM", "VO"], indications: ["Meningite bacteriana suspeita (antes ou junto da 1ª dose do antibiótico)", "Edema vasogênico", "Crupe", "Crise de asma pediátrica"], contraindications: [], interactions: [],
     onset: "Horas", duration: "36–54 h",
     doseRules: [r("dexa-meningite", "adulto", "Meningite bacteriana", "IV", "bolus", q(10, "mg"), q(10, "mg"), ["INT-ESCMID-MENINGITE-2016"], { frequency: "6/6 h por 4 dias (conferir)" }), r("dexa-crupe", "pediatrico", "Crupe", "VO", "bolus", q(0.15, "mg/kg"), q(0.6, "mg/kg"), ["INT-AHA-ALS"], { notes: "Faixa a conferir em diretriz pediátrica." })],
     availability: ["medicacoes_basicas", "medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
