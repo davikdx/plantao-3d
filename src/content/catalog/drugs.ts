@@ -756,6 +756,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["BR-RENAME"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "betametasona", name: "Betametasona (acetato + fosfato)", drugClass: "Corticoide",
+    presentations: [{ id: "amp6", label: "Ampola 6 mg/mL (1 mL) — conferir apresentação", concentration: q(6, "mg/mL"), form: "ampola", volumeMl: 1 }],
+    routes: ["IM"], indications: ["Maturação pulmonar fetal na prematuridade com risco de parto"], contraindications: ["Infecção sistêmica não controlada (cautela)"], interactions: ["Hiperglicemia materna transitória"],
+    onset: "24–48 h (efeito fetal)", duration: "—",
+    doseRules: [],
+    availability: ["obstetricia"], sourceIds: ["BR-MEUFRJ-PP", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],

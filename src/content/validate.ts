@@ -2,7 +2,7 @@
  * Validação estrutural e de referências cruzadas de casos. Conteúdo que falha NÃO executa.
  * Passar nesta validação não torna o caso "clinicamente revisado".
  */
-import { CaseDefinitionSchema, type CaseDefinition, type Condition } from "../domain/schema";
+import { CaseDefinitionSchema, RegionSchema, type CaseDefinition, type Condition } from "../domain/schema";
 import { getResourceProfile } from "../domain/resources";
 import { ACTIONS_BY_ID, DRUGS_BY_ID, TESTS_BY_ID, DIAGNOSES_BY_ID } from "./catalog";
 import { REFERENCES_BY_ID } from "./references";
@@ -40,6 +40,7 @@ export function validateCase(input: unknown): ValidationReport {
       if ("drugGiven" in x && !DRUGS_BY_ID.has(x.drugGiven)) errors.push(`${where}: medicamento inexistente ${x.drugGiven}`);
       if ("treatmentActive" in x && !DRUGS_BY_ID.has(x.treatmentActive)) errors.push(`${where}: tratamento inexistente ${x.treatmentActive}`);
       if ("testCollected" in x && !TESTS_BY_ID.has(x.testCollected)) errors.push(`${where}: exame inexistente ${x.testCollected}`);
+      if ("examDone" in x && !RegionSchema.safeParse(x.examDone).success) errors.push(`${where}: região de exame inexistente ${x.examDone}`);
       if ("ruleFired" in x && !c.rules.some((r) => r.id === x.ruleFired)) errors.push(`${where}: regra inexistente ${x.ruleFired}`);
       if ("elapsedSince" in x && x.elapsedSince !== "start") {
         const [kind, id] = x.elapsedSince.split(":");

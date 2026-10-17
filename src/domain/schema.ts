@@ -41,6 +41,7 @@ export type Condition =
   | { treatmentActive: string }
   | { deviceActive: string }
   | { testCollected: string }
+  | { examDone: string; maneuver?: string }
   | { elapsedSince: string; op: "gte" | "lte"; seconds: number }
   | { time: "gte" | "lte"; seconds: number }
   | { ruleFired: string }
@@ -62,6 +63,7 @@ export const ConditionSchema: z.ZodType<Condition> = z.lazy(() =>
     z.object({ treatmentActive: id }).strict(),
     z.object({ deviceActive: DeviceSchema }).strict(),
     z.object({ testCollected: id }).strict(),
+    z.object({ examDone: z.string().min(1), maneuver: z.string().optional() }).strict(),
     z.object({ elapsedSince: z.string().min(1), op: z.enum(["gte", "lte"]), seconds: finite.refine((v) => v >= 0) }).strict(),
     z.object({ time: z.enum(["gte", "lte"]), seconds: finite.refine((v) => v >= 0) }).strict(),
     z.object({ ruleFired: id }).strict(),

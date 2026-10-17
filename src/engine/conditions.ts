@@ -32,6 +32,9 @@ export function evaluate(cond: Condition, s: SimState): boolean {
     return s.treatments.some((t) => t.active && (t.drugId === cond.treatmentActive || t.id === cond.treatmentActive));
   }
   if ("deviceActive" in cond) return s.devices.includes(cond.deviceActive as never);
+  if ("examDone" in cond) {
+    return s.knowledge.exams.some((e) => e.region === cond.examDone && (!cond.maneuver || e.maneuver === cond.maneuver));
+  }
   if ("testCollected" in cond) {
     return s.orders.some((o) => o.kind === "test" && o.refId === cond.testCollected && o.collectTick !== undefined && o.status !== "cancelada");
   }
