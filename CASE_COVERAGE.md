@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **112** (prioritários: 24/24)
+- Casos implementados e registrados: **120** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -121,13 +121,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C110 | Sintomas depressivos em consulta de UBS | sim | technicallyTested | 5 | ubs-urbana |  |
 | C111 | Sintomas urinários e dúvida sobre local de infecção | sim | technicallyTested | 5 | ubs-urbana |  |
 | C112 | Escolha de contracepção com comorbidades | sim | technicallyTested | 5 | ubs-urbana |  |
-| C113 | Dor testicular de início súbito | não | — | 0 | — |  |
-| C114 | Dor lombar, retenção e alteração neurológica | não | — | 0 | — |  |
-| C115 | Dor ocular e perda visual aguda | não | — | 0 | — |  |
-| C116 | Epistaxe persistente com repercussão | não | — | 0 | — |  |
-| C117 | Dor odontogênica, edema e limitação de abertura oral | não | — | 0 | — |  |
-| C118 | Edema de membro com dor e fatores de risco | não | — | 0 | — |  |
-| C119 | Lesões cutâneas com febre em usuário de novo fármaco | não | — | 0 | — |  |
-| C120 | Dor articular aguda com febre | não | — | 0 | — |  |
+| C113 | Dor testicular de início súbito | sim | technicallyTested | 5 | hospital-regional |  |
+| C114 | Dor lombar, retenção e alteração neurológica | sim | technicallyTested | 5 | hospital-regional |  |
+| C115 | Dor ocular e perda visual aguda | sim | technicallyTested | 5 | hospital-regional |  |
+| C116 | Epistaxe persistente com repercussão | sim | technicallyTested | 5 | hospital-regional |  |
+| C117 | Dor odontogênica, edema e limitação de abertura oral | sim | technicallyTested | 5 | hospital-regional |  |
+| C118 | Edema de membro com dor e fatores de risco | sim | technicallyTested | 5 | hospital-regional |  |
+| C119 | Lesões cutâneas com febre em usuário de novo fármaco | sim | technicallyTested | 5 | hospital-regional |  |
+| C120 | Dor articular aguda com febre | sim | technicallyTested | 5 | hospital-regional |  |
 
 Caso técnico adicional: T000 (tutorial do motor; não clínico).

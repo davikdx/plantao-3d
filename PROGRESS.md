@@ -1,6 +1,6 @@
 # PROGRESS — Plantão 3D
 
-Atualizado em 16/10/2026.
+Atualizado em 17/10/2026.
 
 ## Concluído (verificado)
 - Motor determinístico (src/engine): tick fixo 0,1 s, eventos, regras declarativas, tendências, ordens/exames com coleta imutável, prescrição com unidades, replay, desfazer, snapshot com hash.
@@ -13,14 +13,13 @@ Atualizado em 16/10/2026.
 - Ícones e splash próprios (tools/scripts/make_icons.py).
 
 ## Em andamento
-- Casos prontos: C001–C112 (112 + T000); todos os grupos completos exceto Outras urgências. Próximo: C113 (dor testicular súbita), depois C114–C120.
+- Nada em andamento: **os 120 casos do catálogo (C001–C120) + T000 estão implementados**, cada um com 5 trajetórias testadas (1006 testes Vitest aprovados em 17/10/2026).
 
 ## Pendente
-1. 8 casos do catálogo (ver CASE_COVERAGE.md). Ao escrever, ampliar catálogos (ex.: antibióticos, anti-D, cloranfenicol, labetalol) com `validation: "pendente"`.
-2. Revisão clínica qualificada (nenhum caso revisado) e conferência das fontes "não acessado".
-3. Chave de release: gerar keystore e cadastrar os secrets PLANTAO_KEYSTORE_B64, PLANTAO_KEY_ALIAS, PLANTAO_KEYSTORE_PASSWORD, PLANTAO_KEY_PASSWORD (README).
-4. Teste em aparelho Android físico ou emulador (não executado).
-5. Opcional: services/ai-gateway, script Blender, pacotes ZIP de casos.
+1. Revisão clínica qualificada (nenhum caso revisado por profissional); várias fontes são resumos secundários ou apenas resumo/localizador — ver `notes` em src/content/references/index.ts.
+2. Chave de release: gerar keystore e cadastrar os secrets PLANTAO_KEYSTORE_B64, PLANTAO_KEY_ALIAS, PLANTAO_KEYSTORE_PASSWORD, PLANTAO_KEY_PASSWORD (README).
+3. Teste em aparelho Android físico ou emulador (não executado).
+4. Opcional: services/ai-gateway, script Blender, pacotes ZIP de casos.
 
 ## Próximo comando
-Continue a implementação a partir de PROGRESS.md e SPEC.md, preserve o que funciona, escreva o próximo caso pendente em src/content/cases (modelos: C009.ts, C041.ts + helpers.ts), registre em cases/index.ts, rode `npx tsc --noEmit -p tsconfig.json && npx vitest run`, regenere `python3 tools/scripts/case_coverage.py > CASE_COVERAGE.md` e faça commit.
+Revisar clinicamente os casos (CLINICAL_REVIEW.md), conferir fontes marcadas como `nao_acessado`/`localizador_conferido`, configurar a chave de release e testar o APK em aparelho Android.
