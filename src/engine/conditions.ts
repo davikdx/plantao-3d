@@ -76,6 +76,7 @@ function comparePath(path: string, op: string, value: string | number | boolean,
   let current: unknown;
   if (path.startsWith("vars.")) current = s.vars[path.slice(5)];
   else if (path.startsWith("flags.")) current = s.flags[path.slice(6)];
+  else if (path === "disposition") current = s.disposition;
   if (current === undefined) return false;
   switch (op) {
     case "eq":

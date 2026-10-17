@@ -168,10 +168,10 @@ export function validateFlagValue(id: FlagId, value: FlagValue): boolean {
 }
 
 /** Caminhos permitidos em condições: vars.X, flags.Y, time */
-export type AllowedPath = `vars.${VarId}` | `flags.${FlagId}`;
+export type AllowedPath = `vars.${VarId}` | `flags.${FlagId}` | "disposition";
 
 export function isAllowedPath(p: string): p is AllowedPath {
   if (p.startsWith("vars.")) return isVarId(p.slice(5));
   if (p.startsWith("flags.")) return isFlagId(p.slice(6));
-  return false;
+  return p === "disposition";
 }

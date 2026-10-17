@@ -708,6 +708,30 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["INT-EAU-RU-2019", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "sulfato_ferroso", name: "Sulfato ferroso", drugClass: "Ferro oral",
+    presentations: [{ id: "cp40", label: "Comprimido 40 mg de ferro elementar", concentration: q(40, "mg"), form: "comprimido" }],
+    routes: ["VO"], indications: ["Deficiência de ferro"], contraindications: ["Hemocromatose"], interactions: ["Antiácidos, quelantes de fósforo e cálcio reduzem a absorção"],
+    onset: "Semanas", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-RENAME", "INT-KDIGO-ANEMIA-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "sacarato_ferro", name: "Sacarato de hidróxido férrico (ferro IV)", drugClass: "Ferro parenteral",
+    presentations: [{ id: "amp100", label: "Ampola 100 mg de ferro / 5 mL", concentration: q(20, "mg/mL"), form: "ampola", volumeMl: 5 }],
+    routes: ["IV"], indications: ["Deficiência de ferro com intolerância/falha do ferro oral ou necessidade de reposição rápida"], contraindications: ["Hipersensibilidade a ferro parenteral", "Infecção ativa (cautela)"], interactions: [],
+    onset: "Semanas", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["INT-KDIGO-ANEMIA-2026", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "alfaepoetina", name: "Alfaepoetina", drugClass: "Agente estimulador da eritropoiese",
+    presentations: [{ id: "fa4000", label: "Frasco-ampola 4.000 UI", concentration: q(4000, "UI/mL"), form: "frasco_ampola", volumeMl: 1 }],
+    routes: ["SC", "IV"], indications: ["Anemia da DRC após corrigir deficiência de ferro e outras causas (PCDT/componente especializado)"], contraindications: ["Hipertensão não controlada"], interactions: [],
+    onset: "Semanas", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["INT-KDIGO-ANEMIA-2026"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],

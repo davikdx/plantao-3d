@@ -3,7 +3,7 @@
 Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001–C120 do SPEC.md e dos arquivos em `src/content/cases`.
 
 - Casos solicitados: 120
-- Casos implementados e registrados: **66** (prioritários: 24/24)
+- Casos implementados e registrados: **73** (prioritários: 24/24)
 - Revisão clínica qualificada: **nenhum caso revisado por profissional** — status `technicallyTested` significa apenas que o schema validou e as trajetórias automáticas passaram.
 - Cada caso implementado tem 5+ trajetórias (aceitável, sem intervenção, inadequada, atraso, alternativa) executadas com replay e hash em `tests/content/cases.test.ts`.
 
@@ -66,13 +66,13 @@ Gerado por `python3 tools/scripts/case_coverage.py` a partir do catálogo C001�
 | C055 | Fraqueza e distúrbio de cálcio sintomático | sim | technicallyTested | 5 | hospital-regional |  |
 | C056 | Hiperglicemia em UBS com sintomas e perda de peso | sim | technicallyTested | 5 | ubs-urbana |  |
 | C057 | Fraqueza e alteração de ECG em doença renal | sim | technicallyTested | 5 | upa-porte-ii | sim |
-| C058 | Confusão e convulsão com sódio baixo | não | — | 0 | — |  |
-| C059 | Desidratação com sódio elevado | não | — | 0 | — |  |
-| C060 | Lesão renal após perdas gastrointestinais | não | — | 0 | — |  |
-| C061 | Retenção urinária com aumento de creatinina | não | — | 0 | — |  |
-| C062 | Congestão e doença renal avançada | não | — | 0 | — |  |
-| C063 | Acidose em intoxicação ou hipoperfusão | não | — | 0 | — |  |
-| C064 | Anemia e doença renal crônica em seguimento | não | — | 0 | — |  |
+| C058 | Confusão e convulsão com sódio baixo | sim | technicallyTested | 5 | hospital-regional |  |
+| C059 | Desidratação com sódio elevado | sim | technicallyTested | 5 | hospital-regional |  |
+| C060 | Lesão renal após perdas gastrointestinais | sim | technicallyTested | 5 | hospital-regional |  |
+| C061 | Retenção urinária com aumento de creatinina | sim | technicallyTested | 5 | upa-porte-ii |  |
+| C062 | Congestão e doença renal avançada | sim | technicallyTested | 5 | hospital-regional |  |
+| C063 | Acidose em intoxicação ou hipoperfusão | sim | technicallyTested | 5 | hospital-regional |  |
+| C064 | Anemia e doença renal crônica em seguimento | sim | technicallyTested | 5 | ubs-urbana |  |
 | C065 | Dor em fossa ilíaca direita com evolução atípica | não | — | 0 | — |  |
 | C066 | Dor em hipocôndrio direito e febre | não | — | 0 | — |  |
 | C067 | Dor epigástrica persistente com vômitos | não | — | 0 | — |  |
