@@ -780,6 +780,38 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["medicacoes_basicas"], sourceIds: ["BR-FEBRASGO-PE-2019"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "ampicilina", name: "Ampicilina", drugClass: "Aminopenicilina",
+    presentations: [{ id: "fa500", label: "Frasco-ampola 500 mg (reconstituir)", concentration: q(100, "mg/mL"), form: "frasco_ampola", volumeMl: 5 }, { id: "fa1g", label: "Frasco-ampola 1 g (reconstituir)", concentration: q(100, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
+    routes: ["IV", "IM"], indications: ["Sepse neonatal / lactente ≤ 28 dias (cobertura de Listeria e enterococo), associada"], contraindications: ["Alergia a penicilinas"], interactions: [],
+    onset: "—", duration: "6–12 h (idade-dependente)",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["INT-AAP-FEBRIL-2021", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "gentamicina", name: "Gentamicina", drugClass: "Aminoglicosídeo",
+    presentations: [{ id: "amp20", label: "Ampola 10 mg/mL (2 mL)", concentration: q(10, "mg/mL"), form: "ampola", volumeMl: 2 }, { id: "amp80", label: "Ampola 40 mg/mL (2 mL)", concentration: q(40, "mg/mL"), form: "ampola", volumeMl: 2 }],
+    routes: ["IV", "IM"], indications: ["Sepse neonatal (associada à ampicilina)", "DIP hospitalar (associada à clindamicina)"], contraindications: ["Insuficiência renal (ajuste)"], interactions: ["Nefro e ototoxicidade aditivas"],
+    onset: "—", duration: "24–48 h (idade-dependente)",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["INT-AAP-FEBRIL-2021", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "cefotaxima", name: "Cefotaxima", drugClass: "Cefalosporina de 3ª geração",
+    presentations: [{ id: "fa500", label: "Frasco-ampola 500 mg (reconstituir)", concentration: q(100, "mg/mL"), form: "frasco_ampola", volumeMl: 5 }],
+    routes: ["IV", "IM"], indications: ["Sepse/meningite neonatal (alternativa à ceftriaxona no recém-nascido)"], contraindications: ["Alergia grave a betalactâmicos"], interactions: [],
+    onset: "—", duration: "8–12 h",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["BR-ANVISA"], reviewedAt: REV, validation: "pendente"
+  },
+  {
+    id: "aciclovir", name: "Aciclovir", drugClass: "Antiviral",
+    presentations: [{ id: "fa250", label: "Frasco-ampola 250 mg (reconstituir)", concentration: q(25, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
+    routes: ["IV"], indications: ["Suspeita de infecção por herpes simples no recém-nascido/lactente jovem", "Encefalite herpética"], contraindications: [], interactions: ["Nefrotoxicidade (hidratar)"],
+    onset: "—", duration: "8 h",
+    doseRules: [],
+    availability: ["medicacoes_urgencia"], sourceIds: ["INT-AAP-FEBRIL-2021"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],

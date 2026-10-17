@@ -131,6 +131,10 @@ export const DIAGNOSES: DiagnosisEntry[] = [
   D("desidratacao_grave", "Desidratação grave por diarreia", "Pediatria"),
   D("desidratacao_algum_grau", "Desidratação (algum grau) por diarreia", "Pediatria"),
   D("sepse_neonatal", "Infecção bacteriana grave do lactente", "Pediatria"),
+  D("sepse_lactente", "Sepse no lactente jovem (infecção bacteriana invasiva)", "Pediatria", ["infecção bacteriana grave"]),
+  D("intussuscepcao", "Intussuscepção intestinal", "Pediatria", ["invaginação"]),
+  D("ictericia_neonatal", "Hiperbilirrubinemia neonatal", "Pediatria", ["icterícia neonatal"]),
+  D("crupe_grave", "Crupe (laringotraqueobronquite) moderada a grave", "Pediatria"),
   D("convulsao_febril", "Crise febril", "Pediatria"),
   // Toxicologia
   D("intox_paracetamol", "Intoxicação por paracetamol", "Toxicologia"),
