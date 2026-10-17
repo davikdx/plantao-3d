@@ -748,6 +748,14 @@ const drugsRaw: DrugDefinition[] = [
     availability: ["hemocomponentes"], sourceIds: ["INT-PBE-CMAJ-2023", "BR-ANVISA"], reviewedAt: REV, validation: "pendente"
   },
   {
+    id: "lactulose", name: "Lactulose", drugClass: "Dissacarídeo não absorvível",
+    presentations: [{ id: "xarope", label: "Xarope 667 mg/mL", concentration: q(667, "mg/mL"), form: "frasco" }],
+    routes: ["VO", "SNG"], indications: ["Encefalopatia hepática (titular para 2–3 evacuações pastosas/dia)"], contraindications: ["Obstrução intestinal"], interactions: [],
+    onset: "Horas", duration: "—",
+    doseRules: [],
+    availability: ["medicacoes_basicas"], sourceIds: ["BR-RENAME"], reviewedAt: REV, validation: "pendente"
+  },
+  {
     id: "cefepima", name: "Cefepima", drugClass: "Cefalosporina de 4ª geração (antipseudomonas)",
     presentations: [{ id: "fa2g", label: "Frasco-ampola 2 g (reconstituir)", concentration: q(200, "mg/mL"), form: "frasco_ampola", volumeMl: 10 }],
     routes: ["IV"], indications: ["Neutropenia febril (monoterapia empírica em alto risco)", "Infecções graves com risco de Pseudomonas"], contraindications: ["Alergia grave a betalactâmicos"], interactions: ["Neurotoxicidade em insuficiência renal sem ajuste"],
